@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workspaceFilter version="1.0">
+    <filter root="/conf/lam" mode="merge"/>
+    <filter root="/content/lam" mode="merge"/>
+    <filter root="/content/dam/lam" mode="merge">
+        <exclude pattern="/content/dam/lam(/.*)?"/>
+        <include pattern="/content/dam/lam/jcr:content(/.*)?"/>
+    </filter>
+    <filter root="/content/dam/lam/asset.jpg" mode="merge"/>
+    <filter root="/content/experience-fragments/lam" mode="merge"/>
+    <filter root="/content/dam/formsanddocuments-themes/lam" mode="merge"/>
+    <filter root="/content/dam/formsanddocuments-fdm/lam" mode="merge"/>
+    <filter root="/content/dam/lam/sample_logo.png" mode="merge"/>
+    <filter root="/content/dam/lam/sample_terms.png" mode="merge"/>
+    <filter root="/content/dam/lam/wknd_logo.png" mode="merge"/>
+</workspaceFilter>

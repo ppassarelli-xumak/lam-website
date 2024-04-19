@@ -1,0 +1,7 @@
+{
+    "scripts": [
+        "create path (sling:OrderedFolder) /content/dam/lam",
+        "create path (nt:unstructured) /content/dam/lam/jcr:content",
+        "set properties on /content/dam/lam/jcr:content\n  set cq:conf{String} to /conf/lam\n  set jcr:title{String} to \"Lazard Asset Management - AEM Web\"\nend"
+    ]
+}
