@@ -32,6 +32,7 @@ deploy_to_cloudmanager:
     - git remote remove adobe
     - git remote add adobe https://$AEM_CLOUDMANAGER_ACCESS_TOKEN@git.cloudmanager.adobe.com/lazard/LazardAssetManagement-Site/
     - git checkout develop
+    - git pull
     - git push adobe develop
     
 
