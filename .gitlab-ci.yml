@@ -28,5 +28,7 @@ deploy_to_cloudmanager:
     - pwd  
     - echo ${CI_PROJECT_DIR}
     - ls -las
+    - git remote add adobe https://${AEM_CLOUDMANAGER_ACCESS_TOKEN}@git.cloudmanager.adobe.com/lazard/LazardAssetManagement-Site/
+    - git push adobe develop
     
 
