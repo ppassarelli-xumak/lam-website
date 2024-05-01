@@ -21,13 +21,11 @@ public class FooterCopyrightImpl implements FooterCopyright {
     private String text;
 
     @Override
-    public String getYear() {
-        return String.valueOf(Year.now().getValue());
-    }
-
-    @Override
-    public String getText() {
-        return text;
+    public String textWithYear() {
+        int tagEndIndex = text.indexOf('>') + 1;
+        String year = String.valueOf(Year.now().getValue()) + " ";
+        String text_with_year = text.substring(0, tagEndIndex) + "©" + year + text.substring(tagEndIndex);
+        return text_with_year;
     }
 
     @Override

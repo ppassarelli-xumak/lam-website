@@ -1,9 +1,6 @@
 package com.lazard.lam.core.models;
 
 public interface FooterCopyright {
-    String getYear();
-
-    String getText();
-
+    String textWithYear();
     boolean isEmpty();
 }

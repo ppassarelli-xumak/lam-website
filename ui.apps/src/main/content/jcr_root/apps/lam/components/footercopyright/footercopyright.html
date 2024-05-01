@@ -1,7 +1,7 @@
 <div data-sly-use.footerCopyright="com.lazard.lam.core.models.FooterCopyright"
      data-sly-use.placeholderTemplate="core/wcm/components/commons/v1/templates.html"
      data-sly-test.hasContent="${!footerCopyright.empty}">
-     <p>©{footerCopyright.year} {footerCopyright.text}</p>
+     <p class="cmp-text__paragraph"
+       data-sly-unwrap>${footerCopyright.textWithYear @ context = 'html'}</p>
 </div>
-a
 <sly data-sly-call="${placeholderTemplate.placeholder @ isEmpty=!hasContent}"></sly>
