@@ -378,6 +378,36 @@
                     components="/apps/lam/components/adaptiveForm/footer">
                     <jcr:content jcr:primaryType="nt:unstructured"/>
                 </cc-af-footer-policy>
+                <policy_xfm
+                    jcr:description="Policy for experience fragment initial structure"
+                    jcr:primaryType="nt:unstructured"
+                    jcr:title="LAM - Experience Fragment Default"
+                    sling:resourceType="wcm/core/components/policy/policy"
+                    components="[group:Lazard Asset Management - AEM Web - Content,group:Lazard Asset Management - AEM Web - Forms,/apps/lam/components/form/container,group:Lazard Asset Management - AEM Web - Structure]">
+                    <jcr:content jcr:primaryType="nt:unstructured"/>
+                    <cq:authoring jcr:primaryType="nt:unstructured">
+                        <assetToComponentMapping jcr:primaryType="nt:unstructured">
+                            <mapping_1575024218483
+                                    jcr:primaryType="nt:unstructured"
+                                    assetGroup="media"
+                                    assetMimetype="image/*"
+                                    droptarget="image"
+                                    resourceType="lam/components/image"/>
+                            <mapping_1575030843388
+                                    jcr:primaryType="nt:unstructured"
+                                    assetGroup="content"
+                                    assetMimetype="text/html"
+                                    droptarget="experiencefragment"
+                                    resourceType="lam/components/experiencefragment"/>
+                            <mapping_1575030853128
+                                    jcr:primaryType="nt:unstructured"
+                                    assetGroup="media"
+                                    assetMimetype="[text/html,application/vnd.adobe.contentfragment]"
+                                    droptarget="contentfragment"
+                                    resourceType="lam/components/contentfragment"/>
+                        </assetToComponentMapping>
+                    </cq:authoring>
+                </policy_xfm>
                 </container>
             <teaser jcr:primaryType="nt:unstructured">
                 <policy_1575031387650

@@ -1,0 +1,18 @@
+<sly data-sly-use.l1nav="com.lazard.lam.core.models.navigation.L1Navigation"
+     data-sly-use.template="core/wcm/components/commons/v1/templates.html"
+     data-sly-test.hasContent="${!l1nav.navItemEmpty}"></sly>
+<div class="cmp-helloworld" data-cmp-is="helloworld">
+    <div class="cmp-helloworld__item" data-sly-test="${hasContent}">
+        <p class="cmp-helloworld__item-label">L1Nav List:</p>
+        <p>L1 Nav Items Empty</p>
+        <p>${l1nav.navItemEmpty}</p>
+        <div>
+            <ul data-sly-list.item="${l1nav.l1navItems}">
+                <li>Path: ${item.navigationRoot}</li>
+                <li>View Type: ${item.viewType}</li>
+                <li>Title: ${item.title}</li>
+            </ul>
+        </div>
+    </div>
+</div>
+<sly data-sly-call="${template.placeholder @ isEmpty=!hasContent, classAppend='cmp-navigation'}"></sly>
