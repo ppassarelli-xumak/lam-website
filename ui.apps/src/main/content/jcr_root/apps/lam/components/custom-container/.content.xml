@@ -2,6 +2,6 @@
 <jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0"
     jcr:primaryType="cq:Component"
     jcr:title="Custom Container"
-    sling:resourceSuperType="mysite/components/container"
+    sling:resourceSuperType="lam/components/container"
     cq:isContainer="{Boolean}true"
-    componentGroup="My Site - Content"/>
+    componentGroup="Lazard Asset Management - AEM Web - Content"/>

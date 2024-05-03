@@ -30,7 +30,7 @@
                     <lam jcr:primaryType="nt:unstructured">
                         <components jcr:primaryType="nt:unstructured">
                             <button
-                                cq:policy="mysite/components/button/button-component-default-policy"
+                                cq:policy="lam/components/button/button-component-default-policy"
                                 jcr:primaryType="nt:unstructured"
                                 sling:resourceType="wcm/core/components/policies/mapping"/>
                             <form jcr:primaryType="nt:unstructured">
