@@ -1,6 +1,50 @@
+// Container variables
+$column-border: 1px solid get-color(secondary-grey, 500);
+$padding-small: 0.25rem;
+$padding-medium: 0.65rem;
+$padding-large: 1.375rem;
+$padding-xlarge: 2rem;
+$margin-small: 1rem;
+$margin-medium: 2rem;
+$margin-large: 2.8rem;
 
-//== Container main content style, used on page template
+@mixin column-styles {
+  border-left: $column-border;
+  border-right: $column-border;
+}
 
-main.container {
-    padding: .5em 1em;
+.fixed-contained > div,
+.container-columns {
+  max-width: 100%;
+  padding-left: $padding-small;
+  padding-right: $padding-small;
+  margin-left: $margin-small;
+  margin-right: $margin-small;
+  @include column-styles;
+
+  @include breakpoint-until("screen-tablet") {
+    margin-bottom: $margin-small;
+  }
+
+  @include breakpoint-up("screen-tablet") {
+    padding-left: $padding-medium;
+    padding-right: $padding-medium;
+    margin-left: $margin-medium;
+    margin-right: $margin-medium;
+  }
+
+  @include breakpoint-up("screen-desktop") {
+    padding-left: $padding-large;
+    padding-right: $padding-large;
+    margin-left: $margin-large;
+    margin-right: $margin-large;
+  }
+
+  @include breakpoint-up("screen-widescreen") {
+    max-width: calculate-rem(calc(1440px - (64px * 2) - (32px * 2)));
+    overflow: hidden;
+    padding-left: $padding-xlarge;
+    padding-right: $padding-xlarge;
+    margin: 0 auto;
+  }
 }

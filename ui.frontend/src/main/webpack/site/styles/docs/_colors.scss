@@ -1,0 +1,9 @@
+@each $palette, $palette-map in $colors-palette {
+    @each $color, $color-value in $palette-map {
+        .square-#{$palette}-#{$color} {
+            height: 50px;
+            width: 50px;
+            background-color: get-color($palette, $color);
+          }
+    }
+}

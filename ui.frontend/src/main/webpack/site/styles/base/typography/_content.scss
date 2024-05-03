@@ -1,0 +1,157 @@
+@import "../../mixins/typography";
+/** 
+  Bodys | Links | Label
+*/
+
+%content-default {
+  line-height: 1.4;
+  margin: $margin-auto;
+}
+
+@each $bKey, $bconfig in $content {
+  $bweight: map-get($bconfig, fweight);
+  $bstyle: map-get($bconfig, fstyle);
+  $btransform: map-get($bconfig, ftransform);
+
+  .#{$bKey} {
+    @extend %content-default;
+    @include body-attributes($bconfig);
+
+    &--bold {
+      @extend %content-default;
+      @include body-attributes($bconfig);
+      font-weight: $font-weight-bold;
+    }
+
+    &--light {
+      @extend %content-default;
+      @include body-attributes($bconfig);
+      font-weight: $font-weight-light;
+    }
+
+    &--link {
+      @extend %content-default;
+      @include body-attributes($bconfig);
+      text-decoration: $text-decoration-uderline;
+    }
+
+    &--italic {
+      @extend %content-default;
+      @include body-attributes($bconfig);
+      font-style: $font-style-italic;
+    }
+
+    &--uppercase {
+      @extend %content-default;
+      @include body-attributes($bconfig);
+      text-transform: $text-transform-uppercase;
+    }
+  }
+}
+
+/**
+  Article body
+*/
+%article-default {
+  margin: $margin-auto;
+}
+@each $aKey, $aconfig in $articles {
+  $aweight: map-get($aconfig, fweight);
+  $astyle: map-get($aconfig, fstyle);
+  $sgconfig: map-get($aconfig, sg);
+  $mgconfig: map-get($aconfig, mg);
+  $lgconfig: map-get($aconfig, lg);
+
+  .#{$aKey} {
+    @extend %article-default;
+    @include article-attributes($aconfig);
+
+    @include breakpoint-up("screen-tablet") {
+      font-size: calculate-rem(nth($mgconfig, 1));
+      line-height: nth($mgconfig, 2);
+    }
+
+    @include breakpoint-up("screen-desktop") {
+      font-size: calculate-rem(nth($lgconfig, 1));
+      line-height: nth($lgconfig, 2);
+    }
+
+    @each $weight, $weight-value in map-remove($aweight, normal) {
+      &--#{$weight} {
+        @extend %article-default;
+        @include article-attributes($aconfig);
+        font-weight: $weight-value;
+      }
+    }
+
+    @each $style, $style-value in map-remove($astyle, normal) {
+      &--#{$style} {
+        @extend %article-default;
+        @include article-attributes($aconfig);
+        font-style: $style-value;
+      }
+    }
+
+    &--link {
+      @extend %article-default;
+      @include article-attributes($aconfig);
+      text-decoration: $text-decoration-uderline;
+    }
+  }
+}
+/**
+  Eyebrow
+*/
+%eyebrow-default {
+  font-size: calculate-rem($font-size-md);
+  letter-spacing: calculate-rem(0.28px);
+  line-height: 1.2;
+  text-transform: $text-transform-uppercase;
+}
+
+@each $eKey, $econfig in $eyebrow {
+  $eweight: map-get($econfig, fweight);
+
+  .#{$eKey} {
+    @extend %eyebrow-default;
+    font-family: map-get($econfig, family);
+
+    @each $weight, $weight-value in map-remove($eweight, normal) {
+      &--#{$weight} {
+        @extend %eyebrow-default;
+        font-weight: $weight-value;
+      }
+    }
+  }
+}
+
+/**
+  Links
+*/
+%link-default {
+  border: none;
+  font-weight: $font-weight-bold;
+  letter-spacing: 0;
+  line-height: 1.2;
+  text-decoration: $text-decoration-uderline;
+}
+
+@each $lKey, $lconfig in $links {
+
+  .#{$lKey} {
+    @extend %link-default;
+    @include link-attributes($lconfig);
+
+    &--light {
+      @extend %link-default;
+      @include link-attributes($lconfig);
+      color: get-color(secondary-blue, 500);
+    }
+
+    &--dark {
+      @extend %link-default;
+      @include link-attributes($lconfig);
+      color: get-color(natural, 0);
+    }
+  }
+}

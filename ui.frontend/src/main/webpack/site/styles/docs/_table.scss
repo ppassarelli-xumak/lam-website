@@ -1,0 +1,65 @@
+.c-table {
+  border-collapse: collapse;
+  margin: 0;
+  padding: 0;
+  table-layout: fixed;
+  width: 100%;
+
+  &__row {
+    border: 1px solid get-color(natural, 400);
+    padding: 0.35em;
+  }
+
+  &__heading {
+    padding: 0.625em;
+    text-align: center;
+    background-color: get-color(natural, 200);
+    color: get-color(natural, 800);
+  }
+
+  &__cell {
+    padding: 0.625em;
+    text-align: center;
+    border-collapse: collapse;
+  }
+}
+
+.c-box {
+  background: get-color(natural, 800);
+
+  td {
+    color: get-color(natural, 0);
+  }
+}
+
+.c-code {
+  display: block;
+  padding: 0.5rem;
+  line-height: 1.4;
+  color: get-color(natural, 800);
+  font-weight: $font-weight-normal;
+  font-style: $font-style-normal;
+  background-color: get-color(natural, 0);
+  border: 1px solid get-color(natural, 500);
+  overflow-x: auto;
+  border-radius: 0.25rem;
+  margin: $margin-auto;
+}
+
+.g-10 {
+  gap: 1rem;
+}
+
+.p-10 {
+  padding: 0.5rem 0;
+}
+
+.pb-10 {
+  padding-bottom: 1rem;
+}
+
+@include breakpoint-up("screen-tablet") {
+  .d-flex {
+    display: flex;
+  }
+}

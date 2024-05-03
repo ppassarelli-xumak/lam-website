@@ -1,0 +1,74 @@
+/** 
+  Bodys | Links | Eyebrow | Label
+*/
+$content: (
+  body-sm: (
+    family: $font-family-helvetica,
+    fsize: $font-size-md,
+    lspacing: 0,
+  ),
+  body: (
+    family: $font-family-helvetica,
+    fsize: $font-size-base,
+    lspacing: 0,
+  ),
+  body-lg: (
+    family: $font-family-helvetica,
+    fsize: $font-size-lg,
+    lspacing: 0,
+  ),
+  label: (
+    family: $font-family-helvetica,
+    fsize: $font-size-sm,
+    lspacing: 0,
+  ),
+) !default;
+
+/** 
+  Article Body
+*/
+$articles: (
+  article-body: (
+    sg: (16px, 1.6),
+    mg: (16px, 1.6), 
+    lg: (18px, 1.6), 
+    family: $font-family-helvetica,
+    fweight: (
+      light: $font-weight-light,
+      normal: $font-weight-normal,
+      bold: $font-weight-bold,
+    ),
+    fstyle: (
+      normal: $font-style-normal,
+      italic: $font-style-italic,
+    ),
+  ),
+) !default;
+
+/** 
+  Eyebrow
+*/
+$eyebrow: (
+  eyebrow: (
+    family: $font-family-helvetica,
+    fweight: (
+      light: $font-weight-light,
+      normal: $font-weight-normal,
+      bold: $font-weight-bold,
+    )
+  )
+) !default;
+
+/** 
+  Links
+*/
+$links: (
+  link-sm: (
+    family: $font-family-helvetica,
+    fsize: $font-size-md,
+  ),
+  link: (
+    family: $font-family-helvetica,
+    fsize: $font-size-base,
+  )
+) !default;

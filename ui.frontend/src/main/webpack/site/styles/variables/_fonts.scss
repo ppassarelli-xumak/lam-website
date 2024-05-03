@@ -1,0 +1,54 @@
+//== Font
+@import './variables';
+
+/* Helvetica Neue */
+@font-face {
+    font-family: 'Helvetica Neue';
+    src: url('/etc.clientlibs/mysite/clientlibs/clientlib-site/resources/fonts/HelveticaNeueLTStd-Bd.otf') format('otf'),
+         url('/etc.clientlibs/mysite/clientlibs/clientlib-site/resources/fonts/HelveticaNeueLTStd-Bd.ttf') format('ttf'),
+         url('/etc.clientlibs/mysite/clientlibs/clientlib-site/resources/fonts/HelveticaNeueLTStd-Bd.woff') format('woff'),
+         url('/etc.clientlibs/mysite/clientlibs/clientlib-site/resources/fonts/HelveticaNeueLTStd-Bd.woff2') format('woff2');
+    font-weight: $font-weight-bold;
+    font-style: $font-style-normal;
+}
+
+@font-face {
+    font-family: 'Helvetica Neue';
+    src: url('/etc.clientlibs/mysite/clientlibs/clientlib-site/resources/fonts/HelveticaNeueLTStd-It.otf') format('otf'),
+         url('/etc.clientlibs/mysite/clientlibs/clientlib-site/resources/fonts/HelveticaNeueLTStd-It.ttf') format('ttf'),
+         url('/etc.clientlibs/mysite/clientlibs/clientlib-site/resources/fonts/HelveticaNeueLTStd-It.woff') format('woff'),
+         url('/etc.clientlibs/mysite/clientlibs/clientlib-site/resources/fonts/HelveticaNeueLTStd-It.woff2') format('woff2');
+    font-weight: $font-weight-normal;
+    font-style: $font-style-italic;
+}
+
+@font-face {
+    font-family: 'Helvetica Neue';
+    src: url('/etc.clientlibs/mysite/clientlibs/clientlib-site/resources/fonts/HelveticaNeueLTStd-Roman.otf') format('otf'),
+         url('/etc.clientlibs/mysite/clientlibs/clientlib-site/resources/fonts/HelveticaNeueLTStd-Roman.ttf') format('ttf'),
+         url('/etc.clientlibs/mysite/clientlibs/clientlib-site/resources/fonts/HelveticaNeueLTStd-Roman.woff') format('woff'),
+         url('/etc.clientlibs/mysite/clientlibs/clientlib-site/resources/fonts/HelveticaNeueLTStd-Roman.woff2') format('woff2');
+    font-weight: $font-weight-normal;
+    font-style: $font-style-normal;
+}
+
+/* PP-Neue-World */
+@font-face {
+    font-family: 'PP Neue World';
+    src: url('/etc.clientlibs/mysite/clientlibs/clientlib-site/resources/fonts/PPNeueWorld-SemiCondensedRegular.otf') format('otf'),
+         url('/etc.clientlibs/mysite/clientlibs/clientlib-site/resources/fonts/PPNeueWorld-SemiCondensedRegular.ttf') format('ttf'),
+         url('/etc.clientlibs/mysite/clientlibs/clientlib-site/resources/fonts/PPNeueWorld-SemiCondensedRegular.woff') format('woff'),
+         url('/etc.clientlibs/mysite/clientlibs/clientlib-site/resources/fonts/PPNeueWorld-SemiCondensedRegular.woff2') format('woff2');
+    font-weight: $font-weight-normal;
+    font-style: $font-style-normal;
+}
+
+/* Neue World Glyph Icons font */
+@font-face {
+    font-family: '#{$icomoon-font-family}';
+    src:  url('/etc.clientlibs/mysite/clientlibs/clientlib-site/resources/fonts/Neue-World-Glyph.ttf?#{$icomoon-cache-buster}') format('ttf'),
+          url('/etc.clientlibs/mysite/clientlibs/clientlib-site/resources/fonts/Neue-World-Glyph.woff?#{$icomoon-cache-buster}') format('woff');
+    font-weight: $font-weight-normal;
+    font-style: $font-style-normal;
+    font-display: block;
+}

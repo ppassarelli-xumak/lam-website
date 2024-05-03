@@ -1,0 +1,95 @@
+@mixin respond-to($min, $max) {
+    $min-width: null;
+    $max-width: null;
+  
+    @if map-has-key($breakpoints, $min) {
+      $min-width: map-get($breakpoints, $min);
+    }
+  
+    @if map-has-key($breakpoints, $max) {
+      $max-width: map-get($breakpoints, $max);
+    }
+  
+    $media-query: '';
+  
+    @if $min-width != null {
+      $media-query: $media-query + "(min-width: #{$min-width})";
+    }
+  
+    @if $max-width != null {
+      $media-query: $media-query + if($min-width != null, " and ", "") + "(max-width: #{$max-width})";
+    }
+  
+    @if $min-width != null or $max-width != null {
+      @media screen and #{$media-query} {
+        @content;
+      }
+    } @else {
+      @warn "One or both of the specified breakpoints ('$min', '$max') are not valid.";
+    }
+  }
+  
+
+@mixin mobile {
+  @media screen and (max-width: $tablet - 1px) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media screen and (min-width: $tablet), print {
+    @content;
+  }
+}
+
+@mixin tablet-only {
+  @media screen and (min-width: $tablet) and (max-width: $desktop - 1px) {
+    @content;
+  }
+}
+
+@mixin touch {
+  @media screen and (max-width: $desktop - 1px) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media screen and (min-width: $desktop) {
+    @content;
+  }
+}
+
+@mixin widescreen {
+  @media screen and (min-width: $widescreen) {
+    @content;
+  }
+}
+
+@mixin desktop-only {
+  @if $widescreen-enabled {
+    @media screen and (min-width: $desktop) and (max-width: $widescreen - 1px) {
+      @content;
+    }
+  }
+}
+
+@mixin ltr-property($property, $spacing, $right: true) {
+  $normal: if($right, "right", "left");
+  $opposite: if($right, "left", "right");
+  @if $rtl {
+    #{$property}-#{$opposite}: $spacing;
+  } @else {
+    #{$property}-#{$normal}: $spacing;
+  }
+}
+
+@mixin ltr-position($spacing, $right: true) {
+  $normal: if($right, "right", "left");
+  $opposite: if($right, "left", "right");
+  @if $rtl {
+    #{$opposite}: $spacing;
+  } @else {
+    #{$normal}: $spacing;
+  }
+}

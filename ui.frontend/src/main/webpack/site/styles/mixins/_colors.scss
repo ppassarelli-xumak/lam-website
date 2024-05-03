@@ -1,0 +1,29 @@
+// == COLORS
+
+// Function to return color palette.
+@function get-color-palette($palette) {
+    $value: map-get($colors-palette, $palette);
+    @return if($value != 0, $value, null);
+  }
+  
+  // Function to return color palette tone.
+  @function get-color-palette-tone($palette, $tone) {
+    $value: map-get($palette, $tone);
+    @return if($value != 0, $value, null);
+  }
+  
+  // Gets color from main color palettes.
+  @function get-color($palette, $tone) {
+    $pcolor: get-color-palette($palette);
+    @if $pcolor != null {
+      $result: get-color-palette-tone($pcolor, $tone);
+      @if $result != null {
+        @return $result;
+      } @else {
+        @error "Color Pallete #{$palette} with tone #{$tone} does not exists.";
+      }
+    } @else {
+      @error "Color Pallete with name #{$palette} does not exists.";
+    }
+  }
+  

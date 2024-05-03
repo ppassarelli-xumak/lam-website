@@ -1,0 +1,23 @@
+/*
+ Breakpoints
+*/
+
+$breakpoints: (
+  'screen-mobile': 375px, // 23.44 rem (mobile)
+  'screen-tablet': 768px, // 48rem (tablet)
+  'screen-desktop': 1024px, // 64rem (desktop)
+  'screen-widescreen': 1440px // 90rem (widescreen)
+) !default;
+
+$wrapper-width: 1440px;
+
+$gap: 32px !default;
+$fullhd-enabled: true !default;
+$variable-columns: true !default;
+$rtl: false !default;
+$widescreen-enabled: true !default;
+
+// Breakpoints - custom container columns
+$tablet: 769px !default; // 960, 1152, and 1344 have been chosen because they are divisible by both 12 and 16
+$desktop: 960px + (2 * $gap) !default; // 960px container + 4rem
+$widescreen: 1152px + (2 * $gap) !default; // 1152px container + 4rem

@@ -1,0 +1,44 @@
+figure {
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  bottom: 0;
+  height: 100%;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 100%;
+}
+
+.image {
+  display: block;
+  position: relative;
+
+  &.is-square {
+    aspect-ratio: 1 / 1;
+  }
+
+  &.is-3by2 {
+    aspect-ratio: 3 / 2;
+  }
+
+  &.is-16by9 {
+    aspect-ratio: 16 / 9;
+  }
+
+  &.is-3by4 {
+    aspect-ratio: 3 / 4;
+  }
+
+  &.is-5by2 {
+    aspect-ratio: 5 / 2;
+  }
+
+  // Arbitrary ratios with any Element
+  .has-ratio {
+    @extend img;
+  }
+}
