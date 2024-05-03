@@ -1,0 +1,32 @@
+<sly data-sly-template.verticalScrollbar="${@ uuidClass, props, customId}">
+    <sly data-sly-test.id="${customId ? customId : ''}"></sly>
+    <sly
+        data-sly-test.enabled="${'{0}{1}' @ format=['enableVerticalScrollbar',id]}"
+        data-sly-test.heightMobile="${'{0}{1}' @ format=['verticalScrollbarHeightMobile',id]}"
+        data-sly-test.heightTablet="${'{0}{1}' @ format=['verticalScrollbarHeightTablet',id]}"
+        data-sly-test.heightDesktop="${'{0}{1}' @ format=['verticalScrollbarHeightDesktop',id]}"></sly>
+    <style data-sly-test="${props[enabled]}">
+        <sly data-sly-test="${props[heightMobile]}">
+            .${uuidClass @ context='styleToken'} {
+                overflow-y: auto;
+                height: ${props[heightMobile] @ context='styleToken'};
+            }
+        </sly>
+        <sly data-sly-test="${props[heightTablet]}">
+            @media screen and (min-width: 767px) {
+                .${uuidClass @ context='styleToken'} {
+                    overflow-y: auto;
+                    height: ${props[heightTablet] @ context='styleToken'};
+                }
+            }
+        </sly>
+        <sly data-sly-test="${props[heightDesktop]}">
+            @media screen and (min-width: 958px) {
+                .${uuidClass @ context='styleToken'} {
+                    overflow-y: auto;
+                    height: ${props[heightDesktop] @ context='styleToken'};
+                }
+            }
+        </sly>
+    </style>
+</sly>

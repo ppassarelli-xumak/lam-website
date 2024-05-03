@@ -17,10 +17,22 @@ module.exports = env => {
             maxEntrypointSize: 1048576
         },
         plugins: [
-            new HtmlWebpackPlugin({
-                template: path.resolve(__dirname, SOURCE_ROOT + '/static/index.html')
+            'index', 
+            'docs/typography', 
+            'docs/breakpoints', 
+            'docs/colors', 
+            'docs/spacing', 
+            'docs/images',
+            'docs/icons',
+            'docs/grid',
+            'docs/buttons'
+            ].map(
+            (file) =>
+              new HtmlWebpackPlugin({
+                template:  path.resolve(__dirname, SOURCE_ROOT + file + '.html'),
+                filename: './' + file + '.html'
             })
-        ],
+        ),
         devServer: {
             proxy: [{
                 context: ['/content', '/etc.clientlibs'],

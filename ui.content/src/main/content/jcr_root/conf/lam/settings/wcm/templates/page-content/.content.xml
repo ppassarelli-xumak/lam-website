@@ -5,8 +5,8 @@
         cq:lastModified="{Date}2019-12-02T17:37:24.544+01:00"
         cq:lastModifiedBy="admin"
         cq:templateType="/conf/lam/settings/wcm/template-types/page"
-        jcr:description="LAM Page Template"
+        jcr:description="Lazard Asset Management Site Page Template"
         jcr:primaryType="cq:PageContent"
-        jcr:title="LAM Content Page"
+        jcr:title="Content Page"
         status="enabled"/>
 </jcr:root>

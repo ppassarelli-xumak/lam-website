@@ -1,0 +1,158 @@
+// == COLORS
+// The following is a list of all primary, secondary, and tertiary Lazard brand colors.
+$natural-colors: (
+  0: #ffffff,
+  50: #F7F8FA,
+  100: #EBEFF4,
+  200: #B4BECA,
+  400: #9CA6B5,
+  500: #838F9E,
+  700: #616C7C,
+  800: #171A1C
+) !default;
+
+$brand-colors: (
+  100: #9AAAFC,
+  200: #7B88C9,
+  300: #6B77B0,
+  400: #555D8A,
+  500: #42486B,
+  700: #2C3047,
+  800: #23283C
+) !default;
+
+$accent-colors: (
+  200: #9AAAFC,
+  400: #6B77B0,
+) !default;
+
+$success-colors: (
+  500: #616C7C,
+  900: #3E6046
+) !default;
+
+$warning-colors: (
+  500: #DEB653,
+  900: #94760B,
+) !default;
+
+$error-colors: (
+  500: #ECA49C,
+  900: #814646
+) !default;
+
+$graph-colors: (
+  green: #616C7C,
+  yellow: #DEB653,
+  red: #D96363,
+  blue: #65869E,
+  turquoise: #3C858C,
+  purple: #7C6593
+) !default;
+
+// Primary palette
+$primary-colors: (
+  sapphire: #00558A,
+  clarity: #EBF4FA,
+  currency: #4D5C49,
+  sage: #D9E5CC,
+  onyx: #171A1C,
+  parchment: #FFFFFF
+) !default;
+
+// Secondary Palette
+
+$secondary-blue-colors: (
+  900: #102E47,
+  500: #00539A,
+  300: #93CDFF
+) !default;
+
+$secondary-green-colors: (
+  900: #30352B,
+  500: #C1D2B1,
+  300: #D9E5CC
+) !default;
+
+$secondary-grey-colors: (
+  900: #515355,
+  500: #8B8C8D,
+  300: #C5C5C5
+) !default;
+
+// Tertiary Palette
+
+$green-colors: (
+  800: #0D5223,
+  600: #1C6E37,
+  400: #138036,
+  200: #32B45C,
+  100: #6CD28D,
+  50: #A2F1BB
+) !default;
+
+$teal-colors: (
+  800: #083339,
+  600: #114B54,
+  400: #126D79,
+  200: #0C90A2,
+  100: #1BADC2,
+  50: #78E4F3
+) !default;
+
+$purple-colors: (
+  800: #2D054A,
+  600: #431385,
+  400: #6B3C8D,
+  200: #9A61C3,
+  100: #CF9AF6,
+  50: #E5C0FF
+) !default;
+
+$pink-colors: (
+  800: #850B3C,
+  600: #A91754,
+  400: #CC266B,
+  200: #E8478B,
+  100: #FF71AC,
+  50: #FF9DC6
+) !default;
+
+$orange-colors: (
+  800: #84340F,
+  600: #AA3F0F,
+  400: #DC591D,
+  200: #F97235,
+  100: #FF8A54,
+  50: #FFB492
+) !default;
+
+$yellow-colors: (
+  800: #8F7000,
+  600: #C59A00,
+  400: #EAB500,
+  200: #F4D42C,
+  100: #FFE589,
+  50: #FFF4BC
+) !default;
+
+$colors-palette: (
+  natural: $natural-colors,
+  brand: $brand-colors,
+  accent: $accent-colors,
+  success: $success-colors,
+  warning: $warning-colors,
+  error: $error-colors,
+  graph: $graph-colors,
+  primary: $primary-colors,
+  secondary-blue: $secondary-blue-colors,
+  secondary-green: $secondary-green-colors,
+  secondary-grey: $secondary-grey-colors,
+  green: $green-colors,
+  teal: $teal-colors,
+  purple: $purple-colors,
+  pink: $pink-colors,
+  orange: $orange-colors,
+  yellow: $yellow-colors
+) !default;
+

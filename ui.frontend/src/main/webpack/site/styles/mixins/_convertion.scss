@@ -1,0 +1,10 @@
+/*
+ * Calculate Rem value
+ *
+ * Values that should be converted from px to rem include font-size,
+ * margin, padding, width, height, border-width, and any other length-related properties.
+ */
+ @function calculate-rem($size) {
+    $rem-size: $size / $font-size-base;
+    @return #{$rem-size}rem;
+}

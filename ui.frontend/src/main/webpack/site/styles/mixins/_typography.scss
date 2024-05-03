@@ -1,0 +1,32 @@
+@mixin article-attributes($config) {
+  font-family: map-get($config, family);
+  font-size: calculate-rem(nth(map-get($config, sg), 1));
+  font-style: map-get($config, fstyle, normal);
+  font-weight: map-get($config, fweight, normal);
+  line-height: nth(map-get($config, sg), 2);
+}
+
+@mixin body-attributes($config) {
+  font-family: map-get($config, family);
+  font-size: calculate-rem(map-get($config, fsize));
+}
+
+@mixin link-attributes($config) {
+  font-family: map-get($config, family);
+  font-size: calculate-rem(map-get($config, fsize));
+}
+
+@mixin heading-attributes($config) {
+  font-family: map-get($config, family);
+  font-size: calculate-rem(nth(map-get($config, sg), 1));
+  line-height: nth(map-get($config, sg), 2);
+  letter-spacing: calculate-rem(map-get($config, lspacing));
+}
+
+@mixin heading-style($hclass) {
+  .cmp-title {
+    &__text {
+      @extend .#{$hclass};
+    }
+  }
+}

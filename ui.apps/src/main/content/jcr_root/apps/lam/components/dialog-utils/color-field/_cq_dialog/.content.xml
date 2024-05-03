@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0" jcr:primaryType="nt:unstructured"
+    sling:resourceType="granite/ui/components/coral/foundation/form/colorfield"
+    fieldLabel="${{fieldLabel:Color}}"
+    name="./${{name:color}}"
+    showDefaultColors="${{(Boolean)default:false}"
+    showProperties="${{(Boolean)properties:true}}"
+    showSwatches="${{(Boolean)swatches:true}}">
+    <items jcr:primaryType="nt:unstructured">
+        <color1
+            jcr:primaryType="nt:unstructured"
+            value="#FFFFFF"/>
+        <color2
+            jcr:primaryType="nt:unstructured"
+            value="#3A3B3D"/>
+        <color3
+            jcr:primaryType="nt:unstructured"
+            value="#5c9a1b"/>
+        <color4
+            jcr:primaryType="nt:unstructured"
+            value="#78be20"/>
+        <color5
+            jcr:primaryType="nt:unstructured"
+            value="#114A21"/>
+        <color6
+            jcr:primaryType="nt:unstructured"
+            value="#c8c8c8"/>
+        <color7
+            jcr:primaryType="nt:unstructured"
+            value="#EFF5E6"/>
+        <color8
+            jcr:primaryType="nt:unstructured"
+            value="#919394"/>
+        <color9
+            jcr:primaryType="nt:unstructured"
+            value="#d0d3d4"/>
+        <color10
+            jcr:primaryType="nt:unstructured"
+            value="#F8F8F8"/>
+        <color11
+            jcr:primaryType="nt:unstructured"
+            value="#F7F7F7"/>
+    </items>
+</jcr:root>

@@ -1,0 +1,41 @@
+/*
+ Breakpoints
+*/
+
+// Function to return breakpoint value
+@function breakpoint-value($name, $breaks: $breakpoints) {
+  $value: map-get($breaks, $name);
+  @return if($value != 0, $value, null);
+}
+
+//Mixins Breakpoints
+@mixin breakpoint-up($name, $breaks: $breakpoints) {
+  $min: calculate-rem((breakpoint-value($name, $breaks)));
+
+  @if $min != null {
+    @media screen and (min-width: $min) {
+      @content;
+    }
+  }
+}
+
+@mixin breakpoint-until($name) {
+  $max: calculate-rem(breakpoint-value($name));
+
+  @if $max != null {
+    @media screen and (max-width: $max) {
+      @content;
+    }
+  }
+}
+
+@mixin breakpoint-between($min-breakpoint, $max-breakpoint) {
+  $min: breakpoint-value($min-breakpoint);
+  $max: breakpoint-value($max-breakpoint);
+
+  @if $min != null and $max != null {
+    @media screen and (min-width: $min) and (max-width: $max) {
+      @content;
+    }
+  }
+}

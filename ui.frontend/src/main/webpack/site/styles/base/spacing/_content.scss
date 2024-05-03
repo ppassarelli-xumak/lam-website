@@ -1,0 +1,36 @@
+$spacing-sizes: (
+  4,
+  8,
+  12,
+  16,
+  20,
+  24,
+  32,
+  40,
+  48,
+  56,
+  64,
+  80,
+  96,
+  128
+) !default;
+
+$prefixes: (
+    p,
+    pt,
+    pr,
+    pb,
+    pl,
+    m,
+    mt,
+    mr,
+    mb,
+    ml
+) !default;
+
+@each $prefix in $prefixes {
+  @each $size in $spacing-sizes {
+    @include get-space-class($prefix, $size);
+  }
+}
+
