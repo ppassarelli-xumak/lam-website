@@ -1,0 +1,33 @@
+<sly data-sly-template.spacing="${@ uuidClass, props}">
+    <sly data-sly-test.desktop="${ props.topMarginD || props.bottomMarginD || props.rightMarginD || props.leftMarginD || props.topPaddingD || props.bottomPaddingD || props.rightPaddingD || props.leftPaddingD}"></sly>
+    <sly data-sly-test.mobile="${props.topMarginM || props.bottomMarginM || props.rightMarginM || props.leftMarginM|| props.topPaddingM || props.bottomPaddingM || props.rightPaddingM || props.leftPaddingM }"></sly>
+    <style data-sly-test="${desktop || mobile}">
+        <sly data-sly-test="${desktop}">
+            .${uuidClass @ context='styleToken'} {
+                <sly data-sly-test="${props.topMarginD}">margin-top: ${props.topMarginD};</sly>
+                <sly data-sly-test="${props.bottomMarginD}">margin-bottom: ${props.bottomMarginD};</sly>
+                <sly data-sly-test="${props.rightMarginD}">margin-right: ${props.rightMarginD};</sly>
+                <sly data-sly-test="${props.leftMarginD}">margin-left: ${props.leftMarginD};</sly>
+                <sly data-sly-test="${props.topPaddingD}">padding-top: ${props.topPaddingD};</sly>
+                <sly data-sly-test="${props.bottomPaddingD}">padding-bottom: ${props.bottomPaddingD};</sly>
+                <sly data-sly-test="${props.rightPaddingD}">padding-right: ${props.rightPaddingD};</sly>
+                <sly data-sly-test="${props.leftPaddingD}">padding-left: ${props.leftPaddingD};</sly>
+            }
+        </sly>
+
+        <sly data-sly-test="${mobile}">
+            @media screen and (max-width: 767px) {
+                .${uuidClass @ context='styleToken'} {
+                    <sly data-sly-test="${props.topMarginM}">margin-top: ${props.topMarginM};</sly>
+                    <sly data-sly-test="${props.bottomMarginM}">margin-bottom: ${props.bottomMarginM};</sly>
+                    <sly data-sly-test="${props.rightMarginM}">margin-right: ${props.rightMarginM};</sly>
+                    <sly data-sly-test="${props.leftMarginM}">margin-left: ${props.leftMarginM};</sly>
+                    <sly data-sly-test="${props.topPaddingM}">padding-top: ${props.topPaddingM};</sly>
+                    <sly data-sly-test="${props.bottomPaddingM}">padding-bottom: ${props.bottomPaddingM};</sly>
+                    <sly data-sly-test="${props.rightPaddingM}">padding-right: ${props.rightPaddingM};</sly>
+                    <sly data-sly-test="${props.leftPaddingM}">padding-left: ${props.leftPaddingM};</sly>
+                }
+            }
+        </sly>
+    </style>
+</sly>

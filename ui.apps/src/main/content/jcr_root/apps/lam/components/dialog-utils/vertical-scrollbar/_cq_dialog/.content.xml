@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:granite="http://www.adobe.com/jcr/granite/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0" jcr:primaryType="nt:unstructured"
+    jcr:title="${{title:Vertical Scrollbar}}"
+    sling:resourceType="granite/ui/components/coral/foundation/form/fieldset">
+    <items jcr:primaryType="nt:unstructured">
+        <displayVerticalScrollbar
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                checked="{Boolean}false"
+                fieldDescription="When checked, it enables the vertical scrollbar in this container."
+                name="./enableVerticalScrollbar${{id}}"
+                text="Display Vertical Scrollbar"
+                uncheckedValue="{Boolean}false"
+                value="{Boolean}true">
+            <granite:data
+                    jcr:primaryType="nt:unstructured"
+                    acs-cq-dialog-dropdown-checkbox-showhide=""
+                    acs-cq-dialog-dropdown-checkbox-showhide-target=".checkbox-showhide-vertical-scrollbar"/>
+        </displayVerticalScrollbar>
+        <verticalScrollbarGroup
+                granite:class="checkbox-showhide-vertical-scrollbar"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/well">
+            <items jcr:primaryType="nt:unstructured">
+                <verticalScrollbarHeightMobile
+                        cq:showOnCreate="{Boolean}true"
+                        granite:class="acs-commons-field-required-allow-hidden"
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                        defaultValue=""
+                        emptyText="-Default (0)-"
+                        fieldLabel="Scrollbar Height Mobile"
+                        fieldDescription="Value needs to be specified with its absolute or relative length units (%, px, em, rem, pc, etc)."
+                        name="./verticalScrollbarHeightMobile${{id}}">
+                </verticalScrollbarHeightMobile>
+                <verticalScrollbarHeightTablet
+                        cq:showOnCreate="{Boolean}true"
+                        granite:class="acs-commons-field-required-allow-hidden"
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                        defaultValue=""
+                        emptyText="-Default (0)-"
+                        fieldLabel="Scrollbar Height Tablet"
+                        fieldDescription="Value needs to be specified with its absolute or relative length units (%, px, em, rem, pc, etc)."
+                        name="./verticalScrollbarHeightTablet${{id}}">
+                </verticalScrollbarHeightTablet>
+                <verticalScrollbarHeightDesktop
+                        cq:showOnCreate="{Boolean}true"
+                        granite:class="acs-commons-field-required-allow-hidden"
+                        jcr:primaryType="nt:un`structured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                        defaultValue=""
+                        emptyText="-Default (0)-"
+                        fieldLabel="Scrollbar Height Desktop"
+                        fieldDescription="Value needs to be specified with its absolute or relative length units (%, px, em, rem, pc, etc)."
+                        name="./verticalScrollbarHeightDesktop${{id}}">
+                </verticalScrollbarHeightDesktop>
+            </items>
+            <granite:data
+                    jcr:primaryType="nt:unstructured"
+                    acs-checkboxshowhidetargetvalue="true"/>
+        </verticalScrollbarGroup>
+    </items>
+</jcr:root>
