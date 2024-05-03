@@ -1,0 +1,17 @@
+<div data-sly-use.socialLinksModel="com.lazard.lam.core.models.SocialLinksModel"
+     data-sly-use.placeholderTemplate="core/wcm/components/commons/v1/templates.html"
+     data-sly-test.hasContent="${!socialLinksModel.empty}">
+    <div class="social-links" data-sly-test="${!socialLinksModel.disabled}">
+        <div class="youtube-link" data-sly-test="${socialLinksModel.youtubeLink}">
+            <a href="${socialLinksModel.youtubeLink}" target="_blank">
+                <img src="${socialLinksModel.youtubeImagePath}" alt="YouTube Image">
+            </a>
+        </div>
+        <div class="linkedIn-link" data-sly-test="${socialLinksModel.linkedInLink}">
+            <a href="${socialLinksModel.linkedInLink}" target="_blank">
+                <img src="${socialLinksModel.linkedInImagePath}" alt="Linkedin Image">
+            </a>
+        </div>
+    </div>
+</div>
+<sly data-sly-call="${placeholderTemplate.placeholder @ isEmpty=!hasContent || socialLinksModel.disabled}"></sly>
