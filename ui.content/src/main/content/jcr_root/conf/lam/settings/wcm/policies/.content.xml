@@ -59,6 +59,84 @@
     </fd>
     <lam jcr:primaryType="nt:unstructured">
         <components jcr:primaryType="nt:unstructured">
+            <button jcr:primaryType="nt:unstructured">
+                <button-component-default-policy
+                    jcr:lastModified="{Date}2024-05-02T23:08:21.836-04:00"
+                    jcr:lastModifiedBy="admin"
+                    jcr:primaryType="nt:unstructured"
+                    jcr:title="Button Styles"
+                    sling:resourceType="wcm/core/components/policy/policy">
+                    <jcr:content jcr:primaryType="nt:unstructured"/>
+                    <cq:styleGroups jcr:primaryType="nt:unstructured">
+                        <item0
+                            cq:styleGroupLabel="Buttons Style"
+                            jcr:primaryType="nt:unstructured">
+                            <cq:styles jcr:primaryType="nt:unstructured">
+                                <item0
+                                    cq:styleClasses="primary-light"
+                                    cq:styleId="1714575451943"
+                                    cq:styleLabel="Primary Light"
+                                    jcr:primaryType="nt:unstructured"/>
+                                <item1
+                                    cq:styleClasses="primary-light--disabled"
+                                    cq:styleId="1714575798323"
+                                    cq:styleLabel="Primary Light Disabled"
+                                    jcr:primaryType="nt:unstructured"/>
+                                <item2
+                                    cq:styleClasses="primary-light--icon"
+                                    cq:styleId="1714575947874"
+                                    cq:styleLabel="Primary Light Icon"
+                                    jcr:primaryType="nt:unstructured"/>
+                                <item3
+                                    cq:styleClasses="primary-dark"
+                                    cq:styleId="1714575764632"
+                                    cq:styleLabel="Primary Dark"
+                                    jcr:primaryType="nt:unstructured"/>
+                                <item4
+                                    cq:styleClasses="primary-dark--disabled"
+                                    cq:styleId="1714575911516"
+                                    cq:styleLabel="Primary Dark Disabled"
+                                    jcr:primaryType="nt:unstructured"/>
+                                <item5
+                                    cq:styleClasses="primary-dark--icon"
+                                    cq:styleId="1714575988031"
+                                    cq:styleLabel="Primary Dark Icon"
+                                    jcr:primaryType="nt:unstructured"/>
+                                <item6
+                                    cq:styleClasses="secondary-light"
+                                    cq:styleId="1714685066661"
+                                    cq:styleLabel="Secondary Light"
+                                    jcr:primaryType="nt:unstructured"/>
+                                <item7
+                                    cq:styleClasses="secondary-light--disabled"
+                                    cq:styleId="1714685086878"
+                                    cq:styleLabel="Secondary Light Disabled"
+                                    jcr:primaryType="nt:unstructured"/>
+                                <item8
+                                    cq:styleClasses="secondary-light--icon"
+                                    cq:styleId="1714685128084"
+                                    cq:styleLabel="Secondary Light Icon"
+                                    jcr:primaryType="nt:unstructured"/>
+                                <item9
+                                    cq:styleClasses="secondary-dark"
+                                    cq:styleId="1714685148805"
+                                    cq:styleLabel="Secondary Dark"
+                                    jcr:primaryType="nt:unstructured"/>
+                                <item10
+                                    cq:styleClasses="secondary-dark--disabled"
+                                    cq:styleId="1714685165158"
+                                    cq:styleLabel="Secondary Dark Disabled"
+                                    jcr:primaryType="nt:unstructured"/>
+                                <item11
+                                    cq:styleClasses="secondary-dark--icon"
+                                    cq:styleId="1714685638149"
+                                    cq:styleLabel="Secondary Dark Icon"
+                                    jcr:primaryType="nt:unstructured"/>
+                            </cq:styles>
+                        </item0>
+                    </cq:styleGroups>
+                </button-component-default-policy>
+            </button>
             <form jcr:primaryType="nt:unstructured">
                 <container jcr:primaryType="nt:unstructured">
                     <form-container
@@ -240,6 +318,59 @@
                     type="h2">
                     <jcr:content jcr:primaryType="nt:unstructured"/>
                 </policy_641528232375303>
+                <title-component-default-policy
+                    jcr:description="Allows all sizes, but not H1, which is reserved for the main page title."
+                    jcr:primaryType="nt:unstructured"
+                    jcr:title="Content Title"
+                    sling:resourceType="wcm/core/components/policy/policy"
+                    allowedTypes="[h2,h3,h4,h5,h6]"
+                    linkDisabled="false"
+                    type="h2">
+                    <jcr:content jcr:primaryType="nt:unstructured"/>
+                    <cq:styleGroups jcr:primaryType="nt:unstructured">
+                        <item0
+                            cq:styleGroupLabel="Heading Styles"
+                            jcr:primaryType="nt:unstructured">
+                            <cq:styles jcr:primaryType="nt:unstructured">
+                                <item0
+                                    cq:styleClasses="heading-md"
+                                    cq:styleId="1714663198464"
+                                    cq:styleLabel="Heading"
+                                    jcr:primaryType="nt:unstructured"/>
+                                <item1
+                                    cq:styleClasses="heading-sm"
+                                    cq:styleId="1714663187700"
+                                    cq:styleLabel="Heading Small"
+                                    jcr:primaryType="nt:unstructured"/>
+                                <item2
+                                    cq:styleClasses="heading-lg"
+                                    cq:styleId="1714663208868"
+                                    cq:styleLabel="Heading Large"
+                                    jcr:primaryType="nt:unstructured"/>
+                                <item3
+                                    cq:styleClasses="heading-xl"
+                                    cq:styleId="1714663219886"
+                                    cq:styleLabel="Heading Xlarge"
+                                    jcr:primaryType="nt:unstructured"/>
+                                <item4
+                                    cq:styleClasses="subheading"
+                                    cq:styleId="1714680860741"
+                                    cq:styleLabel="Subheading"
+                                    jcr:primaryType="nt:unstructured"/>
+                                <item5
+                                    cq:styleClasses="subheading-sm"
+                                    cq:styleId="1714680872429"
+                                    cq:styleLabel="Subheading Small"
+                                    jcr:primaryType="nt:unstructured"/>
+                                <item6
+                                    cq:styleClasses="subheading-lg"
+                                    cq:styleId="1714680891307"
+                                    cq:styleLabel="Subheading Large"
+                                    jcr:primaryType="nt:unstructured"/>
+                            </cq:styles>
+                        </item0>
+                    </cq:styleGroups>
+                </title-component-default-policy>
             </title>
             <experiencefragment jcr:primaryType="nt:unstructured">
                 <policy_header
