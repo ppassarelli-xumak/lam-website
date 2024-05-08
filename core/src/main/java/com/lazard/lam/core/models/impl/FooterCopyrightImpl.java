@@ -35,4 +35,8 @@ public class FooterCopyrightImpl implements FooterCopyright {
     public boolean isEmpty() {
         return StringUtils.isBlank(text);
     }
+
+    public void setText(String text){
+        this.text = text;
+    }
 }
