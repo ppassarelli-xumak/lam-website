@@ -1,0 +1,8 @@
+// Global class for colors
+@each $palette, $palette-map in $colors-palette {
+  @each $color, $color-value in $palette-map {
+    .#{$palette}-#{$color} {
+      color: get-color($palette, $color);
+    }
+  }
+}

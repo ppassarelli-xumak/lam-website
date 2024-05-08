@@ -1,4 +1,26 @@
-.cmp-button {}
-.cmp-button__text {}
-.cmp-button__icon {}
-//.cmp-button__icon--myIcon {}
+@mixin button-variant($color, $variant) {
+  &.#{$color}-#{$variant} {
+    .cmp-button {
+      @extend .#{$color}-btn--#{$variant};
+    }
+
+    &--disabled {
+      .cmp-button {
+        @extend .#{$color}-btn--#{$variant}-disabled;
+      }
+    }
+
+    &--icon {
+      .cmp-button {
+        @extend .#{$color}-btn--#{$variant}, .btn-icon;
+      }
+    }
+  }
+}
+
+.button {
+  @include button-variant(primary, light);
+  @include button-variant(primary, dark);
+  @include button-variant(secondary, light);
+  @include button-variant(secondary, dark);
+}

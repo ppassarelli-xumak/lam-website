@@ -1,0 +1,555 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:granite="http://www.adobe.com/jcr/granite/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
+    jcr:primaryType="nt:unstructured"
+    sling:resourceType="cq/gui/components/authoring/dialog"
+    jcr:title="Custom Container"
+    extraClientlibs="[acs-commons.widgets.showhidedialogfields]">
+    <content
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/coral/foundation/container">
+        <items jcr:primaryType="nt:unstructured">
+            <tabs
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/tabs">
+                <items jcr:primaryType="nt:unstructured">
+                    <htmlElementTab
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/include"
+                        path="lam/components/dialog-utils/html-element-tab/cq:dialog"/>
+                    <properties
+                        jcr:primaryType="nt:unstructured"
+                        sling:hideResource="{Boolean}true"/>
+                    <settings
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Settings"
+                        sling:resourceType="granite/ui/components/coral/foundation/container">
+                        <items jcr:primaryType="nt:unstructured">
+                            <columns
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns"
+                                margin="{Boolean}true">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <column
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/container">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <spaceSeparation
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                sling:orderBefore="contentSettingsWell"
+                                                emptyText="-Default (0)-"
+                                                fieldDescription="Value needs to be specified with its absolute or relative length units (%, px, em, rem, pc, etc).."
+                                                fieldLabel="Column Space Separation"
+                                                name="./spaceSeparation"/>
+                                            <showSeparator
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                                checked="{Boolean}false"
+                                                fieldDescription="When checked shows a line separator between columns container"
+                                                name="./showSeparator"
+                                                text="Show Line separator"
+                                                uncheckedValue="{Boolean}false"
+                                                value="{Boolean}true"/>
+                                            <verticalScrollbar
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="acs-commons/granite/ui/components/include"
+                                                path="lam/components/dialog-utils/vertical-scrollbar/cq:dialog"/>
+                                        </items>
+                                    </column>
+                                </items>
+                            </columns>
+                        </items>
+                    </settings>
+                    <layout
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Layout"
+                        sling:resourceType="granite/ui/components/coral/foundation/container"
+                        margin="{Boolean}true">
+                        <items jcr:primaryType="nt:unstructured">
+                            <columns
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns"
+                                margin="{Boolean}true">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <column
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/container">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <containetBoxtype
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                                fieldLabel="Layout type"
+                                                name="./containetBoxType">
+                                                <items jcr:primaryType="nt:unstructured">
+                                                    <fluidContainer
+                                                        jcr:primaryType="nt:unstructured"
+                                                        text="Fluid container (full width)"
+                                                        value="fluid-contained"/>
+                                                    <fixedContainer jcr:primaryType="nt:unstructured" 
+                                                        text="Fixed Container (responsive fixed width)" 
+                                                        value="fixed-contained"/>
+                                                </items>
+                                            </containetBoxtype>
+                                            <mobileColumns
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                                fieldDescription="By default, columns are only activated from tablet onwards. This means columns are stacked on top of each other on mobile. Check this box if you want columns to work on mobile too"
+                                                name="./isMobileColumns"
+                                                text="Mobile Columns"
+                                                value="is-mobile"
+                                                uncheckedValue="is-normal"/>
+                                            <verticalCentered
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                                fieldDescription="When checked, the columns align vertically centered"
+                                                name="./isVerticalCentered"
+                                                text="Vertical Centered"
+                                                value="is-vcentered"
+                                                uncheckedValue="is-vnormal"/>
+                                            <horizontalCentered
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                                fieldDescription="When checked, the columns align horizontally centered"
+                                                name="./isHorizontalCentered"
+                                                text="Horizontal Centered"
+                                                value="is-centered"
+                                                uncheckedValue="is-hnormal"/>
+                                            <removeGap
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                                checked="{Boolean}false"
+                                                fieldDescription="When checked, the space between columns is removed."
+                                                name="./isGapless"
+                                                text="Remove Gap"
+                                                value="is-gapless"
+                                                uncheckedValue="is-gapped"/>
+                                            <columnsWell
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/well">
+                                                <items jcr:primaryType="nt:unstructured">
+                                                    <columnsFieldset
+                                                        jcr:primaryType="nt:unstructured"
+                                                        jcr:title="Columns Creation"
+                                                        sling:resourceType="granite/ui/components/coral/foundation/form/fieldset">
+                                                        <items jcr:primaryType="nt:unstructured">
+                                                            <columnsList
+                                                                jcr:primaryType="nt:unstructured"
+                                                                sling:resourceType="granite/ui/components/coral/foundation/form/multifield"
+                                                                fieldLabel="Columns"
+                                                                composite="{Boolean}true">
+                                                                <field
+                                                                    jcr:primaryType="nt:unstructured"
+                                                                    sling:resourceType="granite/ui/components/coral/foundation/container"
+                                                                    name="./columnsList">
+                                                                    <items jcr:primaryType="nt:unstructured">
+                                                                        <columnsAccordion
+                                                                            jcr:primaryType="nt:unstructured"
+                                                                            sling:resourceType="granite/ui/components/coral/foundation/accordion"
+                                                                            margin="{Boolean}true"
+                                                                            variant="default"
+                                                                            fieldLabel="Margin">
+                                                                            <items jcr:primaryType="nt:unstructured">
+                                                                                <columnAccordionContainer
+                                                                                    jcr:primaryType="nt:unstructured"
+                                                                                    sling:resourceType="granite/ui/components/coral/foundation/container"
+                                                                                    jcr:title="Column" 
+                                                                                    margin="{Boolean}true">
+                                                                                        <layout
+                                                                                            jcr:primaryType="nt:unstructured"
+                                                                                            sling:resourceType="granite/ui/components/coral/foundation/accordion"/>
+                                                                                        <items jcr:primaryType="nt:unstructured">
+                                                                                            <mobileSize
+                                                                                                jcr:primaryType="nt:unstructured"
+                                                                                                sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                                                                                fieldLabel="Mobile Size (Up to 768px)"
+                                                                                                name="./mobileSize"
+                                                                                                value="is-auto-mobile">
+                                                                                                <items jcr:primaryType="nt:unstructured">
+                                                                                                    <default 
+                                                                                                        jcr:primaryType="nt:unstructured"
+                                                                                                        text="Auto"
+                                                                                                        value="is-auto-mobile"/>
+                                                                                                    <narrow 
+                                                                                                        jcr:primaryType="nt:unstructured"
+                                                                                                        text="As Needed (content size)"
+                                                                                                        value="is-narrow-mobile"/>
+                                                                                                    <opt0 
+                                                                                                        jcr:primaryType="nt:unstructured"
+                                                                                                        text="Full width"
+                                                                                                        value="is-full-mobile"/>
+                                                                                                    <opt1 
+                                                                                                        jcr:primaryType="nt:unstructured"
+                                                                                                        text="Four fifths"
+                                                                                                        value="is-four-fifths-mobile"/>
+                                                                                                    <opt2 
+                                                                                                        jcr:primaryType="nt:unstructured"
+                                                                                                        text="Three quarters"
+                                                                                                        value="is-three-quarters-mobile"/>
+                                                                                                    <opt3 
+                                                                                                        jcr:primaryType="nt:unstructured"
+                                                                                                        text="Two thirds"
+                                                                                                        value="is-two-thirds-mobile"/>
+                                                                                                    <opt4 
+                                                                                                        jcr:primaryType="nt:unstructured"
+                                                                                                        text="Three fifths"
+                                                                                                        value="is-three-fifths-mobile"/>
+                                                                                                    <opt5 
+                                                                                                        jcr:primaryType="nt:unstructured"
+                                                                                                        text="Half"
+                                                                                                        value="is-half-mobile"/>
+                                                                                                    <opt6 
+                                                                                                        jcr:primaryType="nt:unstructured"
+                                                                                                        text="Two fifths"
+                                                                                                        value="is-two-fifths-mobile"/>
+                                                                                                    <opt7 
+                                                                                                        jcr:primaryType="nt:unstructured"
+                                                                                                        text="One third"
+                                                                                                        value="is-one-third-mobile"/>
+                                                                                                    <opt8 
+                                                                                                        jcr:primaryType="nt:unstructured"
+                                                                                                        text="One quarter"
+                                                                                                        value="is-one-quarter-mobile"/>
+                                                                                                    <opt9 
+                                                                                                        jcr:primaryType="nt:unstructured"
+                                                                                                        text="One Fifth"
+                                                                                                        value="is-one-fifth-mobile"/>
+                                                                                                </items>
+                                                                                            </mobileSize>
+                                                                                            <tabletSize
+                                                                                                jcr:primaryType="nt:unstructured"
+                                                                                                sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                                                                                fieldLabel="Tablet Size (Up to 769px)"
+                                                                                                name="./tabletSize"
+                                                                                                value="is-auto-tablet">
+                                                                                                <items jcr:primaryType="nt:unstructured">
+                                                                                                    <default 
+                                                                                                        jcr:primaryType="nt:unstructured"
+                                                                                                        text="Auto"
+                                                                                                        value="is-auto-tablet"/>
+                                                                                                    <narrow 
+                                                                                                        jcr:primaryType="nt:unstructured"
+                                                                                                        text="As Needed (content size)"
+                                                                                                        value="is-narrow-tablet"/>
+                                                                                                    <opt0 
+                                                                                                        jcr:primaryType="nt:unstructured"
+                                                                                                        text="Full width"
+                                                                                                        value="is-full-tablet"/>
+                                                                                                    <opt1 
+                                                                                                        jcr:primaryType="nt:unstructured"
+                                                                                                        text="Four fifths"
+                                                                                                        value="is-four-fifths-tablet"/>
+                                                                                                    <opt2 
+                                                                                                        jcr:primaryType="nt:unstructured"
+                                                                                                        text="Three quarters"
+                                                                                                        value="is-three-quarters-tablet"/>
+                                                                                                    <opt3 
+                                                                                                        jcr:primaryType="nt:unstructured"
+                                                                                                        text="Two thirds"
+                                                                                                        value="is-two-thirds-tablet"/>
+                                                                                                    <opt4 
+                                                                                                        jcr:primaryType="nt:unstructured"
+                                                                                                        text="Three fifths"
+                                                                                                        value="is-three-fifths-tablet"/>
+                                                                                                    <opt5 
+                                                                                                        jcr:primaryType="nt:unstructured"
+                                                                                                        text="Half"
+                                                                                                        value="is-half-tablet"/>
+                                                                                                    <opt6 
+                                                                                                        jcr:primaryType="nt:unstructured"
+                                                                                                        text="Two fifths"
+                                                                                                        value="is-two-fifths-tablet"/>
+                                                                                                    <opt7 
+                                                                                                        jcr:primaryType="nt:unstructured"
+                                                                                                        text="One third"
+                                                                                                        value="is-one-third-tablet"/>
+                                                                                                    <opt8 
+                                                                                                        jcr:primaryType="nt:unstructured"
+                                                                                                        text="One quarter"
+                                                                                                        value="is-one-quarter-tablet"/>
+                                                                                                    <opt9 
+                                                                                                        jcr:primaryType="nt:unstructured"
+                                                                                                        text="One Fifth"
+                                                                                                        value="is-one-fifth-tablet"/>
+                                                                                                </items>
+                                                                                            </tabletSize>
+                                                                                            <desktopSize
+                                                                                                jcr:primaryType="nt:unstructured"
+                                                                                                sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                                                                                fieldLabel="Desktop Size (Up to 1024px)"
+                                                                                                name="./desktopSize"
+                                                                                                value="is-auto-desktop">
+                                                                                                <items jcr:primaryType="nt:unstructured">
+                                                                                                    <default 
+                                                                                                        jcr:primaryType="nt:unstructured"
+                                                                                                        text="Auto"
+                                                                                                        value="is-auto-desktop"/>
+                                                                                                    <narrow 
+                                                                                                        jcr:primaryType="nt:unstructured"
+                                                                                                        text="As Needed (content size)"
+                                                                                                        value="is-narrow-desktop"/>
+                                                                                                    <opt0 
+                                                                                                        jcr:primaryType="nt:unstructured"
+                                                                                                        text="Full width"
+                                                                                                        value="is-full-desktop"/>
+                                                                                                    <opt1 
+                                                                                                        jcr:primaryType="nt:unstructured"
+                                                                                                        text="Four fifths"
+                                                                                                        value="is-four-fifths-desktop"/>
+                                                                                                    <opt2 
+                                                                                                        jcr:primaryType="nt:unstructured"
+                                                                                                        text="Three quarters"
+                                                                                                        value="is-three-quarters-desktop"/>
+                                                                                                    <opt3 
+                                                                                                        jcr:primaryType="nt:unstructured"
+                                                                                                        text="Two thirds"
+                                                                                                        value="is-two-thirds-desktop"/>
+                                                                                                    <opt4 
+                                                                                                        jcr:primaryType="nt:unstructured"
+                                                                                                        text="Three fifths"
+                                                                                                        value="is-three-fifths-desktop"/>
+                                                                                                    <opt5 
+                                                                                                        jcr:primaryType="nt:unstructured"
+                                                                                                        text="Half"
+                                                                                                        value="is-half-desktop"/>
+                                                                                                    <opt6 
+                                                                                                        jcr:primaryType="nt:unstructured"
+                                                                                                        text="Two fifths"
+                                                                                                        value="is-two-fifths-desktop"/>
+                                                                                                    <opt7 
+                                                                                                        jcr:primaryType="nt:unstructured"
+                                                                                                        text="One third"
+                                                                                                        value="is-one-third-desktop"/>
+                                                                                                    <opt8 
+                                                                                                        jcr:primaryType="nt:unstructured"
+                                                                                                        text="One quarter"
+                                                                                                        value="is-one-quarter-desktop"/>
+                                                                                                    <opt9 
+                                                                                                        jcr:primaryType="nt:unstructured"
+                                                                                                        text="One Fifth"
+                                                                                                        value="is-one-fifth-desktop"/>
+                                                                                                </items>
+                                                                                            </desktopSize>
+                                                                                        </items>
+                                                                                </columnAccordionContainer>
+                                                                            </items>
+                                                                        </columnsAccordion>
+                                                                    </items>
+                                                                </field>
+                                                            </columnsList>
+                                                        </items>
+                                                    </columnsFieldset>
+                                                </items>
+                                            </columnsWell>
+                                        </items>
+                                    </column>
+                                </items>
+                            </columns>
+                        </items>
+                    </layout>
+                    <background
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Background"
+                        sling:resourceType="granite/ui/components/coral/foundation/container"
+                        margin="{Boolean}true">
+                        <items jcr:primaryType="nt:unstructured">
+                            <columns
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns"
+                                margin="{Boolean}true">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <column
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/container">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <backgroundWell
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/well">
+                                                <items jcr:primaryType="nt:unstructured">
+                                                    <bakcgroundFieldset
+                                                        jcr:primaryType="nt:unstructured"
+                                                        jcr:title="Background Configuration"
+                                                        sling:resourceType="granite/ui/components/coral/foundation/form/fieldset">
+                                                        <items jcr:primaryType="nt:unstructured">
+                                                            <fullBackgroundAccordion
+                                                                jcr:primaryType="nt:unstructured"
+                                                                sling:resourceType="granite/ui/components/coral/foundation/accordion"
+                                                                margin="{Boolean}true"
+                                                                variant="default"
+                                                                fieldLabel="Margin">
+                                                                <items jcr:primaryType="nt:unstructured">
+                                                                    <fullBackgroundAccordionContainer
+                                                                        jcr:primaryType="nt:unstructured"
+                                                                        sling:resourceType="granite/ui/components/coral/foundation/container"
+                                                                        jcr:title="Full Background" 
+                                                                        margin="{Boolean}true">
+                                                                        <layout
+                                                                            jcr:primaryType="nt:unstructured"
+                                                                            sling:resourceType="granite/ui/components/coral/foundation/accordion"/>
+                                                                            <items jcr:primaryType="nt:unstructured">
+                                                                                <backgroundColor
+                                                                                    jcr:primaryType="nt:unstructured"
+                                                                                    sling:resourceType="acs-commons/granite/ui/components/include"
+                                                                                    path="lam/components/dialog-utils/color-field/cq:dialog">
+                                                                                    <parameters
+                                                                                        jcr:primaryType="nt:unstructured"
+                                                                                        fieldLabel="Full Background Color"
+                                                                                        name="backgroundColor"/>
+                                                                                </backgroundColor>
+                                                                                <image
+                                                                                    jcr:primaryType="nt:unstructured"
+                                                                                    sling:resourceType="cq/gui/components/authoring/dialog/fileupload"
+                                                                                    allowUpload="{Boolean}false"
+                                                                                    autoStart="{Boolean}false"
+                                                                                    class="cq-droptarget"
+                                                                                    fieldLabel="Background Image"
+                                                                                    fileNameParameter="./image"
+                                                                                    fileReferenceParameter="./imageReference"
+                                                                                    mimeTypes="[image/gif,image/jpeg,image/png,image/tiff,image/svg+xml]"
+                                                                                    multiple="{Boolean}false"
+                                                                                    name="./image"
+                                                                                    title="Full Background Image"
+                                                                                    uploadUrl="${suffix.path}"
+                                                                                    useHTML5="{Boolean}true"/>
+                                                                                <backgroundSizeM
+                                                                                    jcr:primaryType="nt:unstructured"
+                                                                                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                                                    defaultValue=""
+                                                                                    emptyText="-Default (0)-"
+                                                                                    fieldDescription="Value needs to be specified with its absolute or relative length units (%, px, em, rem, pc, etc)."
+                                                                                    fieldLabel="Background Size "
+                                                                                    name="./backgroundSizeM"/>
+                                                                                <backgroundSizeD
+                                                                                    jcr:primaryType="nt:unstructured"
+                                                                                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                                                    defaultValue=""
+                                                                                    emptyText="-Default (0)-"
+                                                                                    fieldDescription="Value needs to be specified with its absolute or relative length units (%, px, em, rem, pc, etc)."
+                                                                                    fieldLabel="Background Size Desktop Only"
+                                                                                    name="./backgroundSizeD"/>
+                                                                            </items>
+                                                                    </fullBackgroundAccordionContainer>
+                                                                </items>
+                                                            </fullBackgroundAccordion>
+                                                            <contentBackgroundAccordion
+                                                                jcr:primaryType="nt:unstructured"
+                                                                sling:resourceType="granite/ui/components/coral/foundation/accordion"
+                                                                margin="{Boolean}true"
+                                                                variant="default"
+                                                                fieldLabel="Margin">
+                                                                <items jcr:primaryType="nt:unstructured">
+                                                                    <contentBackgroundAccordionContainer
+                                                                        jcr:primaryType="nt:unstructured"
+                                                                        sling:resourceType="granite/ui/components/coral/foundation/container"
+                                                                        jcr:title="Content Background" 
+                                                                        margin="{Boolean}true">
+                                                                        <layout
+                                                                            jcr:primaryType="nt:unstructured"
+                                                                            sling:resourceType="granite/ui/components/coral/foundation/accordion"/>
+                                                                            <items jcr:primaryType="nt:unstructured">
+                                                                                <backgroundColor
+                                                                                    jcr:primaryType="nt:unstructured"
+                                                                                    sling:resourceType="acs-commons/granite/ui/components/include"
+                                                                                    path="lam/components/dialog-utils/color-field/cq:dialog">
+                                                                                    <parameters
+                                                                                        jcr:primaryType="nt:unstructured"
+                                                                                        fieldLabel="Content Background Color"
+                                                                                        name="contentBackgroundColor"/>
+                                                                                </backgroundColor>
+                                                                                <image
+                                                                                    jcr:primaryType="nt:unstructured"
+                                                                                    sling:resourceType="cq/gui/components/authoring/dialog/fileupload"
+                                                                                    allowUpload="{Boolean}false"
+                                                                                    autoStart="{Boolean}false"
+                                                                                    class="cq-droptarget"
+                                                                                    fieldLabel="Content Background Image"
+                                                                                    fileNameParameter="./image"
+                                                                                    fileReferenceParameter="./imageReference"
+                                                                                    mimeTypes="[image/gif,image/jpeg,image/png,image/tiff,image/svg+xml]"
+                                                                                    multiple="{Boolean}false"
+                                                                                    name="./contentImage"
+                                                                                    title="Content Background Image"
+                                                                                    uploadUrl="${suffix.path}"
+                                                                                    useHTML5="{Boolean}true"/>
+                                                                                <backgroundSizeM
+                                                                                    jcr:primaryType="nt:unstructured"
+                                                                                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                                                    defaultValue=""
+                                                                                    emptyText="-Default (0)-"
+                                                                                    fieldDescription="Value needs to be specified with its absolute or relative length units (%, px, em, rem, pc, etc)."
+                                                                                    fieldLabel="Background Size "
+                                                                                    name="./contentBackgroundSizeM"/>
+                                                                                <backgroundSizeD
+                                                                                    jcr:primaryType="nt:unstructured"
+                                                                                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                                                    defaultValue=""
+                                                                                    emptyText="-Default (0)-"
+                                                                                    fieldDescription="Value needs to be specified with its absolute or relative length units (%, px, em, rem, pc, etc)."
+                                                                                    fieldLabel="Background Size Desktop Only"
+                                                                                    name="./contentBackgroundSizeD"/>
+                                                                            </items>
+                                                                    </contentBackgroundAccordionContainer>
+                                                                </items>
+                                                            </contentBackgroundAccordion>
+                                                            <applyContentBorderColor
+                                                                jcr:primaryType="nt:unstructured"
+                                                                sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                                                checked="{Boolean}false"
+                                                                fieldDescription="When checked the options to set a size and color for border will be enable"
+                                                                name="./applyContentBorderColor"
+                                                                text="Apply Content Border"
+                                                                uncheckedValue="{Boolean}false"
+                                                                value="{Boolean}true">
+                                                                <granite:data
+                                                                    jcr:primaryType="nt:unstructured"
+                                                                    acs-cq-dialog-dropdown-checkbox-showhide=""
+                                                                    acs-cq-dialog-dropdown-checkbox-showhide-target=".checkbox-show-content-border"/>
+                                                            </applyContentBorderColor>
+                                                            <contentBorderWell
+                                                                jcr:primaryType="nt:unstructured"
+                                                                granite:class="checkbox-show-content-border hide"
+                                                                sling:resourceType="granite/ui/components/coral/foundation/well">
+                                                                <items jcr:primaryType="nt:unstructured">
+                                                                    <contentBorderFieldset
+                                                                        jcr:primaryType="nt:unstructured"
+                                                                        jcr:title="Custom Content Border"
+                                                                        sling:resourceType="granite/ui/components/coral/foundation/form/fieldset">
+                                                                        <items jcr:primaryType="nt:unstructured">
+                                                                            <contentBorderColor
+                                                                                jcr:primaryType="nt:unstructured"
+                                                                                sling:resourceType="acs-commons/granite/ui/components/include"
+                                                                                path="lam/components/dialog-utils/color-field/cq:dialog">
+                                                                                <parameters
+                                                                                    jcr:primaryType="nt:unstructured"
+                                                                                    fieldLabel="Content Border Color"
+                                                                                    name="contentBorderColor"/>
+                                                                            </contentBorderColor>
+                                                                            <borderWidth
+                                                                                jcr:primaryType="nt:unstructured"
+                                                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                                                defaultValue=""
+                                                                                emptyText="-Default (0)-"
+                                                                                fieldDescription="Value can be specified with its absolute or relative length units (%, px, em, rem, pc, etc), you can set multiple parameters to define border side."
+                                                                                fieldLabel="Border Width "
+                                                                                name="./borderWidth"/>
+                                                                        </items>
+                                                                    </contentBorderFieldset>
+                                                                </items>
+                                                                <granite:data
+                                                                    jcr:primaryType="nt:unstructured"
+                                                                    acs-checkboxshowhidetargetvalue="true"/>
+                                                            </contentBorderWell>
+                                                        </items>
+                                                    </bakcgroundFieldset>
+                                                </items>
+                                            </backgroundWell>
+                                        </items>
+                                    </column>
+                                </items>
+                            </columns>
+                        </items>
+                    </background>
+                </items>
+            </tabs>
+        </items>
+    </content>
+</jcr:root>

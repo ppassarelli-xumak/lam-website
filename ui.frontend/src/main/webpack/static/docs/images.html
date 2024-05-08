@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Images</title>
+  </head>
+  <body>
+    <div>
+      <h1 class="subheading-lg">Images</h1>
+      <br />
+      <p class="subheading-md">Dimensions</p>
+      <table class="c-table">
+        <tr class="c-table__row">
+          <th class="c-table__heading">Name</th>
+          <th class="c-table__heading">Content</th>
+          <th class="c-table__heading">CSS custom property</th>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell">5:2 Landscape</td>
+          <td class="c-table__cell">
+            <figure class="image is-5by2">
+              <img src="https://picsum.photos/375" />
+            </figure>
+          </td>
+          <td class="c-table__cell"><code>.image .is-5by2</code></td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell">16:9 Widescreen</td>
+          <td class="c-table__cell">
+            <figure class="image is-16by9">
+              <img src="https://picsum.photos/375" />
+            </figure>
+          </td>
+          <td class="c-table__cell"><code>.image .is-16by9</code></td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell">3:2 Landscape</td>
+          <td class="c-table__cell">
+            <figure class="image is-3by2">
+              <img src="https://picsum.photos/375" />
+            </figure>
+          </td>
+          <td class="c-table__cell"><code>.image .is-3by2</code></td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell">1:1 square</td>
+          <td class="c-table__cell">
+            <figure class="image is-square">
+              <img src="https://picsum.photos/375" />
+            </figure>
+          </td>
+          <td class="c-table__cell"><code>.image .is-square</code></td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell">3:4 Portrait</td>
+          <td class="c-table__cell">
+            <figure class="image is-3by4">
+              <img src="https://picsum.photos/375" />
+            </figure>
+          </td>
+          <td class="c-table__cell"><code>.image .is-3by4</code></td>
+        </tr>
+      </table>
+      <br />
+    </div>
+    <div>
+      <h1 class="subheading-lg">Arbitrary ratios with any element</h1>
+      <br />
+      <p>
+        You can apply a specific ratio on any element other than an img, simply
+        by applying the <strong>has-ratio</strong> modifier to a resizable
+        element. For example, you can apply a <strong>.16by9</strong> ratio on
+        an iframe. Resize the browser, and you'll see how the ratio is
+        maintained.
+      </p>
+      <table class="c-table">
+        <tr class="c-table__row">
+          <th class="c-table__heading">Name</th>
+          <th class="c-table__heading">Content</th>
+          <th class="c-table__heading">CSS custom property</th>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell">16:9 Landscape</td>
+          <td class="c-table__cell">
+            <figure class="image is-16by9">
+              <iframe
+                class="has-ratio"
+                width="640"
+                height="360"
+                src="https://www.youtube.com/embed/YE7VzlLtp-4"
+                frameborder="0"
+                allowfullscreen=""
+              ></iframe>
+            </figure>
+          </td>
+          <td class="c-table__cell"><code><code> .image .is-16by9 .has-ratio</code></td>
+        </tr>
+      </table>
+    </div>
+  </body>
+</html>

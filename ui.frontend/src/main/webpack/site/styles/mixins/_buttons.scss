@@ -1,0 +1,20 @@
+// == Buttons
+
+@mixin button-styles() {
+  border: none;
+  border-radius: 62.43rem;
+  display: inline-flex;
+  font-family: $font-family-helvetica;
+  font-size: $font-size-sm;
+  font-style: $font-style-normal;
+  font-weight: $font-weight-bold;
+  padding: 0.25rem 1.5rem 0 1.5rem;
+  height: 2.75rem;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+
+  @include breakpoint-up("screen-tablet") {
+    font-size: $font-size-base;
+  }
+}

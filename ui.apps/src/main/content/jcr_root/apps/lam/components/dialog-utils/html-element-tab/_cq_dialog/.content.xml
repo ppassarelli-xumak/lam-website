@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="Html Element"
+    sling:resourceType="granite/ui/components/coral/foundation/container"
+    margin="{Boolean}true">
+    <items jcr:primaryType="nt:unstructured">
+        <columns
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns"
+            margin="{Boolean}true">
+            <items jcr:primaryType="nt:unstructured">
+                <columns
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/foundation/container"
+                    margin="{Boolean}true">
+                    <items jcr:primaryType="nt:unstructured">
+
+                        <id
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                            fieldDescription="Custom ID for main HTML element on the component"
+                            fieldLabel="Custom ID"
+                            name="./customId"/>
+                        <class
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                            fieldDescription="Custom CLASS for main HTML element on the component"
+                            fieldLabel="Custom Class"
+                            name="./class"/>
+
+                        <desktopSpacingWell
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/coral/foundation/well">
+                            <items jcr:primaryType="nt:unstructured">
+
+                                <desktopSpacing
+                                    jcr:primaryType="nt:unstructured"
+                                    jcr:title="Desktop Spacing"
+                                    sling:resourceType="granite/ui/components/coral/foundation/form/fieldset">
+                                    <items jcr:primaryType="nt:unstructured">
+
+                                            <marginCollapsibleContainer
+                                                jcr:primaryType="nt:unstructured"
+                                                jcr:title="Outer Space Settings (Margin)"
+                                                sling:resourceType="granite/ui/components/foundation/container"
+                                                margin="{Boolean}true"
+                                                fieldLabel="Margin"
+                                                name="./marginsD">
+                                                <layout
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/foundation/layouts/collapsible"/>
+                                                <items jcr:primaryType="nt:unstructured">
+                                                    <topmargin
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                        defaultValue=""
+                                                        emptyText="-Default (0)-"
+                                                        fieldDescription="Value needs to be specified with its absolute or relative length units (%, px, em, rem, pc, etc)."
+                                                        fieldLabel="Top"
+                                                        name="./topMarginD"/>
+                                                    <bottommargin
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                        defaultValue=""
+                                                        emptyText="-Default (0)-"
+                                                        fieldDescription="Value needs to be specified with its absolute or relative length units (%, px, em, rem, pc, etc)."
+                                                        fieldLabel="Bottom"
+                                                        name="./bottomMarginD"/>
+                                                    <rightmargin
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                        defaultValue=""
+                                                        emptyText="-Default (0)-"
+                                                        fieldDescription="Value needs to be specified with its absolute or relative length units (%, px, em, rem, pc, etc)."
+                                                        fieldLabel="Right"
+                                                        name="./rightMarginD"/>
+                                                    <leftmargin
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                        defaultValue=""
+                                                        emptyText="-Default (0)-"
+                                                        fieldDescription="Value needs to be specified with its absolute or relative length units (%, px, em, rem, pc, etc)."
+                                                        fieldLabel="Left"
+                                                        name="./leftMarginD"/>
+                                                </items>
+                                            </marginCollapsibleContainer>
+
+                                            <paddingCollapsibleContainer
+                                                jcr:primaryType="nt:unstructured"
+                                                jcr:title="Inner Space Settings (Paddings)"
+                                                sling:resourceType="granite/ui/components/foundation/container"
+                                                margin="{Boolean}true"
+                                                fieldLabel="Paddings"
+                                                name="./paddingsD">
+                                                <layout
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/foundation/layouts/collapsible"/>
+                                                <items jcr:primaryType="nt:unstructured">
+                                                    <toppadding
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                        defaultValue=""
+                                                        emptyText="-Default (0)-"
+                                                        fieldDescription="Value needs to be specified with its absolute or relative length units (%, px, em, rem, pc, etc)."
+                                                        fieldLabel="Top"
+                                                        name="./topPaddingD"/>
+                                                    <bottompadding
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                        defaultValue=""
+                                                        emptyText="-Default (0)-"
+                                                        fieldDescription="Value needs to be specified with its absolute or relative length units (%, px, em, rem, pc, etc)."
+                                                        fieldLabel="Bottom"
+                                                        name="./bottomPaddingD"/>
+                                                    <rightpadding
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                        defaultValue=""
+                                                        emptyText="-Default (0)-"
+                                                        fieldDescription="Value needs to be specified with its absolute or relative length units (%, px, em, rem, pc, etc)."
+                                                        fieldLabel="Right"
+                                                        name="./rightPaddingD"/>
+                                                    <leftpadding
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                        defaultValue=""
+                                                        emptyText="-Default (0)-"
+                                                        fieldDescription="Value needs to be specified with its absolute or relative length units (%, px, em, rem, pc, etc)."
+                                                        fieldLabel="Left"
+                                                        name="./leftPaddingD"/>
+                                                </items>
+                                            </paddingCollapsibleContainer>
+                                    </items>
+                                </desktopSpacing>
+
+                            </items>
+                        </desktopSpacingWell>
+
+                        <mobileSpacingWell
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/coral/foundation/well">
+                            <items jcr:primaryType="nt:unstructured">
+
+                                <mobileSpacing
+                                    jcr:primaryType="nt:unstructured"
+                                    jcr:title="Mobile Spacing"
+                                    sling:resourceType="granite/ui/components/coral/foundation/form/fieldset">
+                                    <items jcr:primaryType="nt:unstructured">
+
+                                        <marginCollapsibleContainer
+                                            jcr:primaryType="nt:unstructured"
+                                            jcr:title="Outer Space Settings (Margin)"
+                                            sling:resourceType="granite/ui/components/foundation/container"
+                                            margin="{Boolean}true"
+                                            fieldLabel="Margin"
+                                            name="./marginsM">
+                                            <layout
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/foundation/layouts/collapsible"/>
+                                            <items jcr:primaryType="nt:unstructured">
+                                                <topmargin
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                    defaultValue=""
+                                                    emptyText="-Default (0)-"
+                                                    fieldDescription="Value needs to be specified with its absolute or relative length units (%, px, em, rem, pc, etc)."
+                                                    fieldLabel="Top"
+                                                    name="./topMarginM"/>
+                                                <bottommargin
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                    defaultValue=""
+                                                    emptyText="-Default (0)-"
+                                                    fieldDescription="Value needs to be specified with its absolute or relative length units (%, px, em, rem, pc, etc)."
+                                                    fieldLabel="Bottom"
+                                                    name="./bottomMarginM"/>
+                                                <rightmargin
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                    defaultValue=""
+                                                    emptyText="-Default (0)-"
+                                                    fieldDescription="Value needs to be specified with its absolute or relative length units (%, px, em, rem, pc, etc)."
+                                                    fieldLabel="Right"
+                                                    name="./rightMarginM"/>
+                                                <leftmargin
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                    defaultValue=""
+                                                    emptyText="-Default (0)-"
+                                                    fieldDescription="Value needs to be specified with its absolute or relative length units (%, px, em, rem, pc, etc)."
+                                                    fieldLabel="Left"
+                                                    name="./leftMarginM"/>
+                                            </items>
+                                        </marginCollapsibleContainer>
+
+                                        <paddingCollapsibleContainer
+                                            jcr:primaryType="nt:unstructured"
+                                            jcr:title="Inner Space Settings (Paddings)"
+                                            sling:resourceType="granite/ui/components/foundation/container"
+                                            margin="{Boolean}true"
+                                            fieldLabel="Paddings"
+                                            name="./paddingsM">
+                                            <layout
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/foundation/layouts/collapsible"/>
+                                            <items jcr:primaryType="nt:unstructured">
+                                                <toppadding
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                    defaultValue=""
+                                                    emptyText="-Default (0)-"
+                                                    fieldDescription="Value needs to be specified with its absolute or relative length units (%, px, em, rem, pc, etc)."
+                                                    fieldLabel="Top"
+                                                    name="./topPaddingM"/>
+                                                <bottompadding
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                    defaultValue=""
+                                                    emptyText="-Default (0)-"
+                                                    fieldDescription="Value needs to be specified with its absolute or relative length units (%, px, em, rem, pc, etc)."
+                                                    fieldLabel="Bottom"
+                                                    name="./bottomPaddingM"/>
+                                                <rightpadding
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                    defaultValue=""
+                                                    emptyText="-Default (0)-"
+                                                    fieldDescription="Value needs to be specified with its absolute or relative length units (%, px, em, rem, pc, etc)."
+                                                    fieldLabel="Right"
+                                                    name="./rightPaddingM"/>
+                                                <leftpadding
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                    defaultValue=""
+                                                    emptyText="-Default (0)-"
+                                                    fieldDescription="Value needs to be specified with its absolute or relative length units (%, px, em, rem, pc, etc)."
+                                                    fieldLabel="Left"
+                                                    name="./leftPaddingM"/>
+                                            </items>
+                                        </paddingCollapsibleContainer>
+                                    </items>
+                                </mobileSpacing>
+
+                            </items>
+                        </mobileSpacingWell>
+
+                    </items>
+                </columns>
+            </items>
+        </columns>
+    </items>
+</jcr:root>

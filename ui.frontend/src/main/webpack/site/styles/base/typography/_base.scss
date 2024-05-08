@@ -1,0 +1,17 @@
+a {
+  @extend .link;
+}
+
+b,
+strong {
+  @extend .body--bold;
+}
+
+em,
+i {
+  @extend .body--italic;
+}
+
+p {
+  @extend .body;
+}

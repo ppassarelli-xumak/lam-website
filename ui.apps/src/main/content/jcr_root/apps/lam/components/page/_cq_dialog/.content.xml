@@ -1,0 +1,366 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:granite="http://www.adobe.com/jcr/granite/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+          jcr:primaryType="nt:unstructured"
+          jcr:title="Page"
+          sling:resourceType="cq/gui/components/authoring/dialog"
+          mode="edit">
+    <content
+            granite:class="cq-dialog-content-page"
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="granite/ui/components/coral/foundation/container">
+        <items jcr:primaryType="nt:unstructured">
+            <tabs
+                    granite:class="cq-siteadmin-admin-properties-tabs"
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/coral/foundation/tabs"
+                    size="L">
+                <items jcr:primaryType="nt:unstructured">
+                    <lazardAssetManagement
+                            cq:showOnCreate="{Boolean}true"
+                            jcr:primaryType="nt:unstructured"
+                            jcr:title="Lazard Asset Management"
+                            sling:orderBefore="basic"
+                            sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns">
+                        <items jcr:primaryType="nt:unstructured">
+                            <column
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/container">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <section
+                                            jcr:primaryType="nt:unstructured"
+                                            jcr:title="Lazard Asset Management"
+                                            sling:resourceType="granite/ui/components/coral/foundation/form/fieldset">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <hidePageFor
+                                                    name="./hidePageFor"
+                                                    cq:showOnCreate="true"
+                                                    fieldDescription="Hide Page For"
+                                                    fieldLabel="Hide Page For"
+                                                    multiple="{Boolean}true"
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/coral/foundation/form/select" >
+                                                <optionsmultifield jcr:primaryType="nt:unstructured">
+                                                    <item0
+                                                            jcr:primaryType="nt:unstructured"
+                                                            fieldLabel="Individual Investor"
+                                                            fieldValue="individual-investor"/>
+                                                    <item1
+                                                            jcr:primaryType="nt:unstructured"
+                                                            fieldLabel="Financial Intermediary"
+                                                            fieldValue="financial-intermediary"/>
+                                                    <item2
+                                                            jcr:primaryType="nt:unstructured"
+                                                            fieldLabel="Institutional Investor"
+                                                            fieldValue="institutional-investor"/>
+                                                    <item3
+                                                            jcr:primaryType="nt:unstructured"
+                                                            fieldLabel="Private Wealth"
+                                                            fieldValue="private-wealth"/>
+                                                </optionsmultifield>
+                                                <datasource
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="dam/cfm/admin/components/datasources/optionrendererenumeration"
+                                                        variant="default"/>
+                                                <granite:data jcr:primaryType="nt:unstructured"/>
+                                            </hidePageFor>
+                                            <headerTheme
+                                                    name="./headerTheme"
+                                                    cq:showOnCreate="true"
+                                                    fieldDescription="Header Theme"
+                                                    fieldLabel="Header Theme"
+                                                    multiple="{Boolean}false"
+                                                    default="dark"
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/coral/foundation/form/select" >
+                                                <optionsmultifield jcr:primaryType="nt:unstructured">
+                                                    <item0
+                                                            jcr:primaryType="nt:unstructured"
+                                                            fieldLabel="Dark"
+                                                            fieldValue="dark"/>
+                                                    <item1
+                                                            jcr:primaryType="nt:unstructured"
+                                                            fieldLabel="Light"
+                                                            fieldValue="light"/>
+                                                </optionsmultifield>
+                                                <datasource
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="dam/cfm/admin/components/datasources/optionrendererenumeration"
+                                                        variant="default"/>
+                                                <granite:data jcr:primaryType="nt:unstructured"/>
+                                            </headerTheme>
+                                            <linkType
+                                                    name="./linkType"
+                                                    cq:showOnCreate="true"
+                                                    fieldDescription="Link Type"
+                                                    fieldLabel="Link Type"
+                                                    multiple="{Boolean}false"
+                                                    default="internal"
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/coral/foundation/form/select" >
+                                                <optionsmultifield jcr:primaryType="nt:unstructured">
+                                                    <item0
+                                                            jcr:primaryType="nt:unstructured"
+                                                            fieldLabel="Internal"
+                                                            fieldValue="internal"/>
+                                                    <item1
+                                                            jcr:primaryType="nt:unstructured"
+                                                            fieldLabel="External"
+                                                            fieldValue="external"/>
+                                                </optionsmultifield>
+                                                <datasource
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="dam/cfm/admin/components/datasources/optionrendererenumeration"
+                                                        variant="default"/>
+                                                <granite:data jcr:primaryType="nt:unstructured"/>
+                                            </linkType>
+                                            <disclaimerAcceptance
+                                                    name="./disclaimerAcceptance"
+                                                    cq:showOnCreate="true"
+                                                    fieldDescription="Disclaimer Acceptance"
+                                                    fieldLabel="Disclaimer Acceptance"
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield" />
+                                            <date
+                                                    name="./date"
+                                                    cq:showOnCreate="true"
+                                                    fieldDescription="Date"
+                                                    fieldLabel="Date"
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/coral/foundation/form/datepicker" />
+                                            <category
+                                                    name="./category"
+                                                    cq:showOnCreate="true"
+                                                    fieldDescription="Category"
+                                                    fieldLabel="Category"
+                                                    multiple="{Boolean}false"
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/coral/foundation/form/select" >
+                                                <optionsmultifield jcr:primaryType="nt:unstructured">
+                                                    <item0
+                                                            jcr:primaryType="nt:unstructured"
+                                                            fieldLabel="Strategy"
+                                                            fieldValue="strategy"/>
+                                                    <item1
+                                                            jcr:primaryType="nt:unstructured"
+                                                            fieldLabel="Fund"
+                                                            fieldValue="fund"/>
+                                                    <item2
+                                                            jcr:primaryType="nt:unstructured"
+                                                            fieldLabel="Insights"
+                                                            fieldValue="insights"/>
+                                                    <item3
+                                                            jcr:primaryType="nt:unstructured"
+                                                            fieldLabel="Investment Insights"
+                                                            fieldValue="investment-insights"/>
+                                                    <item4
+                                                            jcr:primaryType="nt:unstructured"
+                                                            fieldLabel="Market Insights"
+                                                            fieldValue="market-insights"/>
+                                                    <item5
+                                                            jcr:primaryType="nt:unstructured"
+                                                            fieldLabel="Sustainable Insights"
+                                                            fieldValue="sustainable-insights"/>
+                                                    <item6
+                                                            jcr:primaryType="nt:unstructured"
+                                                            fieldLabel="Video"
+                                                            fieldValue="video"/>
+                                                    <item7
+                                                            jcr:primaryType="nt:unstructured"
+                                                            fieldLabel="Podcast"
+                                                            fieldValue="podcast"/>
+                                                    <item8
+                                                            jcr:primaryType="nt:unstructured"
+                                                            fieldLabel="Webcast"
+                                                            fieldValue="webcast"/>
+                                                    <item9
+                                                            jcr:primaryType="nt:unstructured"
+                                                            fieldLabel="PDF"
+                                                            fieldValue="PDF"/>
+                                                    <item10
+                                                            jcr:primaryType="nt:unstructured"
+                                                            fieldLabel="Event"
+                                                            fieldValue="event"/>
+                                                </optionsmultifield>
+                                                <datasource
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="dam/cfm/admin/components/datasources/optionrendererenumeration"
+                                                        variant="default"/>
+                                                <granite:data jcr:primaryType="nt:unstructured"/>
+                                            </category>
+                                            <author
+                                                    name="./author"
+                                                    cq:showOnCreate="true"
+                                                    fieldDescription="Author"
+                                                    fieldLabel="Author"
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield" />
+                                            <readTime
+                                                    name="./readTime"
+                                                    cq:showOnCreate="true"
+                                                    fieldDescription="Read Time"
+                                                    fieldLabel="Read Time"
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield" />
+                                            <assetClass
+                                                    name="./assetClass"
+                                                    cq:showOnCreate="true"
+                                                    fieldDescription="Asset Class"
+                                                    fieldLabel="Asset Class"
+                                                    multiple="{Boolean}false"
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/coral/foundation/form/select" >
+                                            </assetClass>
+                                            <tagLine
+                                                    name="./tagLine"
+                                                    cq:showOnCreate="true"
+                                                    fieldDescription="Tag Line"
+                                                    fieldLabel="Tag Line"
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield" />
+                                            <primaryBenchmark
+                                                    name="./primaryBenchmark"
+                                                    cq:showOnCreate="true"
+                                                    fieldDescription="Primary Benchmark"
+                                                    fieldLabel="Primary Benchmark"
+                                                    multiple="{Boolean}false"
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/coral/foundation/form/select" >
+                                            </primaryBenchmark>
+                                            <ytd
+                                                    name="./ytd"
+                                                    cq:showOnCreate="true"
+                                                    fieldDescription="YTD"
+                                                    fieldLabel="YTD"
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield" />
+                                            <ticker
+                                                    name="./ticker"
+                                                    cq:showOnCreate="true"
+                                                    fieldDescription="Ticker"
+                                                    fieldLabel="Ticker"
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield" />
+                                            <morningstarRating
+                                                    name="./morningstarRating"
+                                                    cq:showOnCreate="true"
+                                                    fieldDescription="Morningstar Rating"
+                                                    fieldLabel="Morningstar Rating"
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/coral/foundation/form/numberfield" />
+                                            <morningstarCategory
+                                                    name="./morningstarCategory"
+                                                    cq:showOnCreate="true"
+                                                    fieldDescription="Morningstar Category"
+                                                    fieldLabel="Morningstar Category"
+                                                    multiple="{Boolean}false"
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/coral/foundation/form/select" >
+                                            </morningstarCategory>
+                                            <shareClass
+                                                    name="./shareClass"
+                                                    cq:showOnCreate="true"
+                                                    fieldDescription="Share Class"
+                                                    fieldLabel="Share Class"
+                                                    multiple="{Boolean}false"
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/coral/foundation/form/select" >
+                                            </shareClass>
+                                            <isin
+                                                    name="./isin"
+                                                    cq:showOnCreate="true"
+                                                    fieldDescription="ISIN"
+                                                    fieldLabel="ISIN"
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield" />
+                                            <nav
+                                                    name="./nav"
+                                                    cq:showOnCreate="true"
+                                                    fieldDescription="NAV"
+                                                    fieldLabel="NAV"
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield" />
+                                            <awardRanking
+                                                    name="./awardRanking"
+                                                    cq:showOnCreate="true"
+                                                    fieldDescription="Award Ranking"
+                                                    fieldLabel="Award Ranking"
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield" />
+                                            <totalFundAssets
+                                                    name="./totalFundAssets"
+                                                    cq:showOnCreate="true"
+                                                    fieldDescription="Total Fund Assets"
+                                                    fieldLabel="Total Fund Assets"
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield" />
+                                            <sfdr
+                                                    name="./sfdr"
+                                                    cq:showOnCreate="true"
+                                                    fieldDescription="SFDR"
+                                                    fieldLabel="SFDR"
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield" />
+                                            <sedol
+                                                    name="./sedol"
+                                                    cq:showOnCreate="true"
+                                                    fieldDescription="Sedol"
+                                                    fieldLabel="Sedol"
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield" />
+                                            <wkn
+                                                    name="./wkn"
+                                                    cq:showOnCreate="true"
+                                                    fieldDescription="WKN"
+                                                    fieldLabel="WKN"
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield" />
+                                            <pageProductData
+                                                    name="./pageProductData"
+                                                    cq:showOnCreate="true"
+                                                    fieldDescription="Page Product Data"
+                                                    fieldLabel="Page Product Data"
+                                                    multiple="{Boolean}false"
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/coral/foundation/form/select" >
+                                                <optionsmultifield jcr:primaryType="nt:unstructured">
+                                                    <item0
+                                                            jcr:primaryType="nt:unstructured"
+                                                            fieldLabel="Fund Listing"
+                                                            fieldValue="fund-listing"/>
+                                                    <item1
+                                                            jcr:primaryType="nt:unstructured"
+                                                            fieldLabel="Fund Detail"
+                                                            fieldValue="fund-detail"/>
+                                                    <item2
+                                                            jcr:primaryType="nt:unstructured"
+                                                            fieldLabel="Strategy Listing"
+                                                            fieldValue="strategy-listing"/>
+                                                    <item3
+                                                            jcr:primaryType="nt:unstructured"
+                                                            fieldLabel="Strategy Detail"
+                                                            fieldValue="strategy-detail"/>
+                                                </optionsmultifield>
+                                                <datasource
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="dam/cfm/admin/components/datasources/optionrendererenumeration"
+                                                        variant="default"/>
+                                                <granite:data jcr:primaryType="nt:unstructured"/>
+                                            </pageProductData>
+                                            <includeSkipToMainContent
+                                                    name="./includeSkipToMainContent"
+                                                    cq:showOnCreate="true"
+                                                    fieldDescription="Include Skip To Main Content"
+                                                    text="Include Skip to Main Content"
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/coral/foundation/form/checkbox" />
+                                        </items>
+                                    </section>
+                                </items>
+                            </column>
+                        </items>
+                    </lazardAssetManagement>
+                </items>
+            </tabs>
+        </items>
+    </content>
+</jcr:root>

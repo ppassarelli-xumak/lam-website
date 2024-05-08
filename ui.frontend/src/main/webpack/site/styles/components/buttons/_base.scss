@@ -1,0 +1,129 @@
+
+$button-themes: (
+  primary-btn: (
+    light: (
+      base: (
+        background-color: get-color(primary, sapphire),
+        color: get-color(natural, 0),
+      ),
+      hover: (
+        background-color: get-color(secondary-blue, 900),
+      ),
+      focus: (
+        background-color: get-color(secondary-blue, 900),
+      ),
+      disabled: (
+        background-color: get-color(secondary-grey, 300),
+        color: get-color(secondary-grey, 900),
+      ),
+    ),
+    dark: (
+      base: (
+        background-color: get-color(natural, 0),
+        color: get-color(primary, sapphire),
+      ),
+      hover: (
+        background-color: get-color(primary, clarity),
+      ),
+      focus: (
+        background-color: get-color(natural, 0),
+      ),
+      disabled: (
+        background-color: get-color(secondary-grey, 900),
+        color: get-color(secondary-grey, 300),
+      ),
+    ),
+  ),
+  secondary-btn: (
+    light: (
+      base: (
+        background-color: get-color(natural, 0),
+        border: 1px solid get-color(primary, sapphire),
+        color: get-color(primary, sapphire),
+      ),
+      hover: (
+        background-color: get-color(secondary-blue, 500),
+        border: none,
+        color: get-color(natural, 0),
+      ),
+      focus: (
+        background-color: get-color(secondary-blue, 500),
+        color: get-color(natural, 0),
+      ),
+      disabled: (
+        background-color: get-color(secondary-grey, 300),
+        color: get-color(secondary-grey, 900),
+      ),
+    ),
+    dark: (
+      base: (
+        background-color: get-color(natural, 800),
+        border: 1px solid get-color(natural, 0),
+        color: get-color(natural, 0),
+      ),
+      hover: (
+        background-color: get-color(natural, 0),
+        color: get-color(primary, sapphire),
+      ),
+      focus: (
+        background-color: get-color(natural, 0),
+        color: get-color(primary, sapphire),
+      ),
+      disabled: (
+        background-color: get-color(secondary-grey, 900),
+        color: get-color(secondary-grey, 300),
+      ),
+    ),
+  ),
+);
+
+// Generate button styles
+@each $type, $type-themes in $button-themes {
+  @each $theme, $theme-styles in $type-themes {
+    .#{$type}--#{$theme} {
+      @include button-styles;
+
+      @each $state, $styles in $theme-styles {
+        &:#{$state} {
+          @each $property, $value in $styles {
+            #{$property}: #{$value};
+          }
+        }
+      }
+
+      @each $property, $value in map-get($theme-styles, base) {
+        #{$property}: #{$value};
+      }
+
+      &-disabled {
+        @include button-styles;
+        @each $property, $value in map-get($theme-styles, disabled) {
+          #{$property}: #{$value};
+          border: none;
+          cursor: not-allowed;
+
+          &:focus {
+            outline: none;
+          }
+        }
+      }
+
+      &.btn-icon {
+        &:after {
+          content: $icon-chevron-right;
+          font-family: $icomoon-font-family;
+          padding-left: 0.5rem;
+
+           @include breakpoint-up("screen-tablet") {
+            margin-top: -0.2rem;
+          }
+        }
+      }
+
+      &:focus {
+        outline-offset: 0.35rem;
+        outline: 2px solid get-color(secondary-blue, 300);
+      }
+    }
+  }
+}

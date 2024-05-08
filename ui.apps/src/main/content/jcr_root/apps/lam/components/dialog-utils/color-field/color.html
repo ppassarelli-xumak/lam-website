@@ -1,0 +1,15 @@
+<sly data-sly-template.textColor="${@ uuidClass, textColor}">
+    <style data-sly-test="${textColor}">
+        .${uuidClass @ context='styleToken'}, .${uuidClass @ context='styleToken'} * {
+            color: ${textColor @ context='styleToken'} !important;
+        }
+    </style>
+</sly>
+
+<sly data-sly-template.backgroundColor="${@ uuidClass, backgroundColor}">
+    <style data-sly-test="${backgroundColor}">
+        .${uuidClass @ context='styleToken'} {
+            background-color: ${backgroundColor @ context='styleToken'};
+        }
+    </style>
+</sly>

@@ -1,33 +1,40 @@
-//== Base
-
-html,
 body {
-    margin: 0;
-    font-size:   $font-size;
-    font-family: $font-family;
-    line-height: $font-height;
-    color:       $color-foreground;
-    background:  $color-background;
-
-    @media (prefers-color-scheme: dark) {
-        color:       $color-foreground-dark;
-        background:  $color-background-dark;
-    }
+  margin: 0;
 }
 
+button {
+  @extend .primary-btn--light;
+}
 
 a {
-    color: $color-link;
-
-    @media (prefers-color-scheme: dark) {
-        color: $color-link-dark;
-    }
+  @extend .link;
 }
 
-button,
-input,
-optgroup,
-select,
-textarea {
-    font: inherit;
+// .container-fluid {
+//     max-width: 100%;
+//     padding-left: 1rem;
+//     padding-right: 1rem;
+//     margin: 0 auto;
+
+//     @include respond-to(medium, null) {
+//         padding-left: 1.5rem;
+//         padding-right: 1.5rem;
+//     }
+
+//     @include respond-to(large, null) {
+//         padding-left: 1.875rem;
+//         padding-right: 1.875rem;
+//     }
+// }
+
+.hidden-desktop {
+  @include respond-to("screen-desktop", null) {
+    display: none;
+  }
+}
+
+.hidden-mobile {
+  @include respond-to(null, "screen-tablet") {
+    display: none;
+  }
 }

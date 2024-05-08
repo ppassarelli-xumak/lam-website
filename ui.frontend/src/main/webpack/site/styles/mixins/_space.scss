@@ -1,0 +1,19 @@
+@mixin get-space-class($prefix, $size) {
+    $spacing: 1px;
+    .#{$prefix}-#{$size} {
+        #{map-get($space-prefixes, $prefix)}: $spacing * $size;
+    }
+  }
+
+$space-prefixes : (
+    p  : padding,
+    pt : padding-top,
+    pr : padding-right,
+    pb : padding-bottom,
+    pl : padding-left,
+    m  : margin,
+    mt : margin-top,
+    mr : margin-right,
+    mb : margin-bottom,
+    ml : margin-left
+  ) !default;

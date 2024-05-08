@@ -1,5 +1,9 @@
 
-@import 'variables';
+@import './styles/variables/all';
+@import './styles/mixins/all';
+@import './styles/base/all';
 @import 'base';
-@import '../components/**/*.scss';
+@import './styles/docs/all';
+@import './styles/components/**/*.scss';
 @import './styles/*.scss';
+@import '../components/**/*.scss';

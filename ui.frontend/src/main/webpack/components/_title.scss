@@ -1,3 +1,29 @@
-.cmp-title {}
-.cmp-title__text {}
-.cmp-title__link {}
+.title {
+  &.heading-sm {
+    @include heading-style(heading-sm);
+  }
+
+  &.heading-md {
+    @include heading-style(heading-md);
+  }
+
+  &.heading-lg {
+    @include heading-style(heading-lg);
+  }
+
+  &.heading-xl {
+    @include heading-style(heading-xl);
+  }
+
+  &.subheading {
+    @include heading-style(subheading);
+  }
+
+  &.subheading-sm {
+    @include heading-style(subheading-sm);
+  }
+
+  &.subheading-lg {
+    @include heading-style(subheading-lg);
+  }
+}

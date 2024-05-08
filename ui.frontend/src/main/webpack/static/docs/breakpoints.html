@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Breakpoints</title>
+  </head>
+  <body>
+    <h1 class="subheading-lg pb-10">Breakpoints</h1>
+    <div>
+      <table class="c-table">
+        <tr class="c-table__row">
+          <th class="c-table__heading">Device Variable</th>
+          <th class="c-table__heading">Size</th>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell">screen-mobile</td>
+          <td class="c-table__cell"><code>375px = 23.44rem</code></td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell">screen-tablet</td>
+          <td class="c-table__cell"><code>768px = 48rem</code></td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell">screen-desktop</td>
+          <td class="c-table__cell"><code>1024px = 64rem</code></td>
+        </tr>
+        <tr class="c-table__row">
+          <td class="c-table__cell">screen-widescreen</td>
+          <td class="c-table__cell"><code>1440px = 90rem</code></td>
+        </tr>
+      </table>
+        <p class="p-10">Functions</p>
+        <pre class="c-code">
+          @include breakpoint-up('screen-mobile') {
+            // Add more properties
+          }
+
+          @include breakpoint-until('screen-desktop') {
+            // Add more properties
+          }
+
+          @include breakpoint-between('screen-tablet', 'screen-widescreen') {
+            // Add more properties
+          }
+        </pre>
+    </div>
+  </body>
+</html>

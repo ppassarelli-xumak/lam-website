@@ -1,0 +1,51 @@
+/** 
+  Headings | Subheading | Titles
+*/
+
+$heading-classes: (
+  h1: xl,
+  h2: lg,
+  h3: md,
+  h4: sm,
+);
+%heading-default {
+  font-weight: $font-weight-normal;
+  margin: $margin-auto;
+  text-transform: $text-transform-capitalize;
+}
+
+@each $hKey, $hconfig in $headings {
+  $sgconfig: map-get($hconfig, sg);
+  $mgconfig: map-get($hconfig, mg);
+  $lgconfig: map-get($hconfig, lg);
+  $lspacing: map-get($hconfig, lspacing);
+
+  // Add custom heading class
+  $class: map-get($heading-classes, $hKey);
+
+  #{$hKey},
+  .#{$hKey},
+  .heading-#{$class} {
+    @extend %heading-default;
+    font-family: map-get($hconfig, family);
+    font-size: calculate-rem(nth($sgconfig, 1));
+    line-height: nth($sgconfig, 2);
+    letter-spacing: calculate-rem($lspacing);
+
+    @include breakpoint-up('screen-tablet') {
+      font-size: calculate-rem(nth($mgconfig, 1));
+      line-height: nth($mgconfig, 2);
+    }
+
+    @include breakpoint-up('screen-desktop') {
+      font-size: calculate-rem(nth($lgconfig, 1));
+      line-height: nth($lgconfig, 2);
+    }
+
+    &--link {
+      @extend %heading-default;
+      @include heading-attributes($hconfig);
+      text-decoration: $text-decoration-uderline;
+    }
+  }
+}

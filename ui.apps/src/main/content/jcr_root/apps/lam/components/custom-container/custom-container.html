@@ -1,0 +1,60 @@
+<sly data-sly-use.templates="core/wcm/components/commons/v1/templates.html"
+  data-sly-use.uuid="lam/components/dialog-utils/uuid/uuid.js"
+  data-sly-use.multipleColumns="com.lazard.lam.core.models.MultipleColumnsMultifieldModel"
+  data-sly-test.fullBackgroundColor="${ 'background-color: {0};' @ format=[properties.backgroundColor] }"
+  data-sly-test.contentBackgroundColor="${ 'background-color: {0};' @ format=[properties.contentBackgroundColor] }"
+  data-sly-use.spacingTemplate="lam/components/dialog-utils/html-element-tab/spacing.html"
+  data-sly-test.contentBorder="${ 'border-width: {0}; border-color: {1};' @ format=[properties.borderWidth,properties.contentBorderColor] }"
+  data-sly-test.heroBannerImageBackground="${ 'background-image: url({0});' @ format=[properties.imageReference] }"
+  data-sly-use.verticalScrollbarTemplate="lam/components/dialog-utils/vertical-scrollbar/vertical-scrollbar.html"
+  data-sly-test.hasContent="${multipleColumns.columnsList.size > 0}">
+  <sly data-sly-test.uuidClass="${uuid.class}"
+    data-sly-test.sidesPaddingValue="${'calc({0}/2)' @ format=[properties.spaceSeparation]}"
+    data-sly-test.sidesPadding="${properties.spaceSeparation ? sidesPaddingValue : '0'}"
+    data-sly-call="${spacingTemplate.spacing @ uuidClass=uuidClass, props=properties}"/>
+
+  <div data-sly-attribute.id="${properties.customId}" class="${uuidClass} ${properties.containetBoxType}"
+    style="${ properties.backgroundColor ? fullBackgroundColor : '' @ context='unsafe' } ${ properties.imageReference ? heroBannerImageBackground : '' @ context='unsafe' }">
+    <style>
+      .${uuid.class @context='unsafe'} .custom-container__column:first-of-type{
+        padding-left: 0;
+      }
+
+      .${uuid.class @context='unsafe'} .custom-container__column:last-of-type{
+        padding-right: 0;
+      }
+
+      <sly data-sly-test="${properties.backgroundSizeM}">
+        .${uuidClass @ context='styleToken'} {
+          background-size: ${properties.backgroundSizeM @ context='styleToken'};
+        }
+      </sly>
+      <sly data-sly-test="${properties.backgroundSizeD}">
+        .${uuidClass @ context='styleToken'} {
+          @media screen and (min-width: 768px) {
+            background-size: ${properties.backgroundSizeD @ context='styleToken'};
+          }
+        }
+      </sly>
+
+    </style>
+    <sly data-sly-test.customHorizontalPadding="${properties.rightPaddingD || properties.leftPaddingD || properties.rightPaddingM || properties.leftPaddingM}"></sly>
+    <div
+      class="columns
+        ${ customHorizontalPadding ? '':'custom-container__wrapper'}
+        ${properties.contentBoxType}
+        ${properties.isMobileColumns}
+        ${properties.isVerticalCentered}
+        ${properties.isHorizontalCentered}
+        ${properties.isGapless}"
+      data-sly-list.col="${multipleColumns.columnsList}">
+      <div
+        style="${ properties.contentBackgroundColor ? contentBackgroundColor : '' @ context='unsafe' } ${properties.applyContentBorderColor ? contentBorder : '' @ context='unsafe'}"
+        class="custom-container__column core-column ${col.mobileSize @ context='text'} ${col.tabletSize @ context='text'} ${col.desktopSize @ context='text'} ${properties.showSeparator ? 'custom-container__column-separator' : ''}">
+          <sly data-sly-test.par="${'{0}{1}' @format=['colpar_',colList.count]}" />
+          <sly data-sly-resource="${ @  path=par,  resourceType='wcm/foundation/components/responsivegrid' }" data-sly-unwrap/>
+      </div>
+    </div>
+  </div>
+</sly>
+<sly data-sly-call="${templates.placeholder @ isEmpty=!hasContent}"></sly>
