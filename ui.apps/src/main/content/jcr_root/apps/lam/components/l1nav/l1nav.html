@@ -11,6 +11,21 @@
                 <li>Path: ${item.navigationRoot}</li>
                 <li>View Type: ${item.viewType}</li>
                 <li>Title: ${item.title}</li>
+                <li>Has Children: ${item.listItems.listItemsEmpty}</li>
+                <ul data-sly-list.child="${item.listItems}">
+                    <li data-sly-test="${child.level == 2}">
+                        <a href="${child.path}">${child.title}</a>
+                    </li>
+                    <ul data-sly-test="${child.level == 3}">
+                        <li>
+                            <a href="${child.path}">${child.title}</a>
+                            <p data-sly-test="${child.body != null}">${child.body}</p>
+                            <p data-sly-test="${child.infoDate != null}">${child.infoDate}</p>
+                            <p data-sly-test="${child.readTime != null}">${child.readTime}</p>
+                            <p data-sly-test="${child.image != null}">${child.image}</p>
+                        </li>
+                    </ul>
+                </ul>
             </ul>
         </div>
     </div>
