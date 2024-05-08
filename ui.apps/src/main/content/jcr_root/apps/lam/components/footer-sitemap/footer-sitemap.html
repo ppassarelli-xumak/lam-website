@@ -1,7 +1,7 @@
 <div data-sly-use.sitemap="com.lazard.lam.core.models.Sitemap"
     data-sly-use.placeholderTemplate="core/wcm/components/commons/v1/templates.html">
-    <li data-sly-list.link="${sitemap.sitemap}">
-        <ul><a href="${link.url}"  x-cq-linkchecker="valid">${link.text}</a></ul> 
-    </li>
+    <ul data-sly-list.link="${sitemap.sitemap}">
+        <li><a href="${link.url}"  x-cq-linkchecker="valid">${link.text}</a></li> 
+    </ul>
 </div>
 <sly data-sly-call="${placeholderTemplate.placeholder @ isEmpty=sitemap.empty}"></sly>

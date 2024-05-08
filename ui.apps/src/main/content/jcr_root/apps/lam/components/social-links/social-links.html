@@ -3,12 +3,12 @@
      data-sly-test.hasContent="${!socialLinksModel.empty}">
     <div class="social-links" data-sly-test="${!socialLinksModel.disabled}">
         <div class="youtube-link" data-sly-test="${socialLinksModel.youtubeLink}">
-            <a href="${socialLinksModel.youtubeLink}" target="_blank">
+            <a href="${socialLinksModel.youtubeLink}" target="_blank" x-cq-linkchecker="valid">
                 <img src="${socialLinksModel.youtubeImagePath}" alt="YouTube Image">
             </a>
         </div>
         <div class="linkedIn-link" data-sly-test="${socialLinksModel.linkedInLink}">
-            <a href="${socialLinksModel.linkedInLink}" target="_blank">
+            <a href="${socialLinksModel.linkedInLink}" target="_blank" x-cq-linkchecker="valid">
                 <img src="${socialLinksModel.linkedInImagePath}" alt="Linkedin Image">
             </a>
         </div>
