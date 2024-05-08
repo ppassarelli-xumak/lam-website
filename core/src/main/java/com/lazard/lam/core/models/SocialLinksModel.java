@@ -7,4 +7,6 @@ public interface SocialLinksModel{
     String getLinkedInImagePath();
     boolean isDisabled();
     boolean isEmpty();
+    void setYoutubeImage(String youtubeImage);
+    void setLinkedinImage(String linkedinImage);
 }
