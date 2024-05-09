@@ -16,7 +16,7 @@
 # This specific template is located at:
 # https://gitlab.com/gitlab-org/gitlab/-/blob/master/lib/gitlab/ci/templates/Getting-Started.gitlab-ci.yml
 
-stages:          # List of STAGES for jobs, and their order of execution
+stages:          # List of stages for jobs, and their order of execution
   - deploy
 
 deploy_to_cloudmanager:
@@ -29,11 +29,12 @@ deploy_to_cloudmanager:
     - pwd  
     - echo ${CI_PROJECT_DIR}
     - ls -las
+    - git remote remove adobe
     - git remote add adobe https://$AEM_CLOUDMANAGER_ACCESS_TOKEN@git.cloudmanager.adobe.com/lazard/LazardAssetManagement-Site/
     - git checkout develop
     - git pull
     - git push adobe develop
-    - git remote remove adobe
+
 
 deploy_to_cloudmanager_QA:
   stage: deploy
@@ -45,10 +46,10 @@ deploy_to_cloudmanager_QA:
     - pwd  
     - echo ${CI_PROJECT_DIR}
     - ls -las
+    - git remote remove adobe
     - git remote add adobe https://$AEM_CLOUDMANAGER_ACCESS_TOKEN@git.cloudmanager.adobe.com/lazard/LazardAssetManagement-Site/
     - git checkout release
     - git pull
     - git push adobe release
-    - git remote remove adobe
     
 
