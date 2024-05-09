@@ -4,6 +4,7 @@ import com.day.cq.wcm.api.Page;
 
 import lombok.Getter;
 
+import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.collections4.CollectionUtils;
 import org.apache.sling.api.resource.Resource;
 import org.apache.sling.api.resource.ResourceResolver;
@@ -55,7 +56,7 @@ public class L1NavigationItem {
             Page rootPage = resource.adaptTo(Page.class);
             if (rootPage != null){
                 int startLevel = rootPage.getDepth();
-                this.title = rootPage.getTitle();
+                this.title = StringUtils.isNotBlank(rootPage.getNavigationTitle()) ? rootPage.getNavigationTitle() : rootPage.getTitle();
                 this.setChildrenList(startLevel, rootPage);
             }
         }
@@ -71,12 +72,14 @@ public class L1NavigationItem {
         while (listChildren.hasNext()) {
             Page currentChild = listChildren.next();
             int level = (currentChild.getDepth() - startLevel) + 1;
+            String childTitle = StringUtils.isNotBlank(currentChild.getNavigationTitle()) ? currentChild.getNavigationTitle() : currentChild.getTitle();
+            String childPath = currentChild.getPath();
             String body = this.getProperties(currentChild, "jcr:description");
             String infoDate = this.getProperties(currentChild, "infoDate"); //Type to be updated when page properties is added to the template
             String readTime = this.getProperties(currentChild, "readTime"); //Type to be updated when page properties is added to the template
             String image = this.getProperties(currentChild, "image"); //Type to be updated when page properties is added to the template
-            newItem = new NavigationItem(currentChild.getTitle(),
-                    currentChild.getPath(),
+            newItem = new NavigationItem(childTitle,
+                    childPath,
                     level,
                     body,
                     infoDate,
