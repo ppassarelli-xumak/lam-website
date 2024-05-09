@@ -29,11 +29,12 @@ deploy_to_cloudmanager:
     - pwd  
     - echo ${CI_PROJECT_DIR}
     - ls -las
-#    - git remote add adobe https://$AEM_CLOUDMANAGER_ACCESS_TOKEN@git.cloudmanager.adobe.com/lazard/LazardAssetManagement-Site/
+#    - git remote remove adobe
+    - git remote add adobe https://$AEM_CLOUDMANAGER_ACCESS_TOKEN@git.cloudmanager.adobe.com/lazard/LazardAssetManagement-Site/
     - git checkout develop
     - git pull
     - git push adobe develop
-#    - git remote remove adobe
+
 
 deploy_to_cloudmanager_QA:
   stage: deploy
@@ -45,10 +46,10 @@ deploy_to_cloudmanager_QA:
     - pwd  
     - echo ${CI_PROJECT_DIR}
     - ls -las
-#    - git remote add adobe https://$AEM_CLOUDMANAGER_ACCESS_TOKEN@git.cloudmanager.adobe.com/lazard/LazardAssetManagement-Site/
+    - git remote remove adobe
+    - git remote add adobe https://$AEM_CLOUDMANAGER_ACCESS_TOKEN@git.cloudmanager.adobe.com/lazard/LazardAssetManagement-Site/
     - git checkout release
     - git pull
     - git push adobe release
-#    - git remote remove adobe
     
 
