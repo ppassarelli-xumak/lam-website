@@ -34,5 +34,22 @@ deploy_to_cloudmanager:
     - git checkout develop
     - git pull
     - git push adobe develop
+
+
+deploy_to_cloudmanager_QA:
+  stage: deploy
+  environment: QA
+  only:
+    - release
+  script:
+    - git remote -v
+    - pwd  
+    - echo ${CI_PROJECT_DIR}
+    - ls -las
+    - git remote remove adobe
+    - git remote add adobe https://$AEM_CLOUDMANAGER_ACCESS_TOKEN@git.cloudmanager.adobe.com/lazard/LazardAssetManagement-Site/
+    - git checkout release
+    - git pull
+    - git push adobe release
     
 
