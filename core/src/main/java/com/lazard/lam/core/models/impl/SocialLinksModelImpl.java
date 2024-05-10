@@ -60,4 +60,13 @@ public class SocialLinksModelImpl implements SocialLinksModel {
     public boolean isEmpty() {
         return StringUtils.isBlank(youtubeImage) && StringUtils.isBlank(linkedInImage);
     }
+
+    @Override
+    public void setYoutubeImage(String youtubeImage) {
+        this.youtubeImage = youtubeImage;
+    }
+    @Override
+    public void setLinkedinImage(String linkedinImage) {
+         this.linkedInImage = linkedinImage;
+    }
 }
