@@ -29,12 +29,12 @@ a {
 
 .hidden-desktop {
   @include respond-to("screen-desktop", null) {
-    display: none;
+    display: none !important;
   }
 }
 
 .hidden-mobile {
   @include respond-to(null, "screen-tablet") {
-    display: none;
+    display: none !important;
   }
 }

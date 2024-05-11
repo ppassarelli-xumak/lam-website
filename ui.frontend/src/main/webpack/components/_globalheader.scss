@@ -1,0 +1,265 @@
+.globalheader {
+    margin-bottom: 30px; //todo: remove - testing
+    position: relative;
+
+    &.active {
+      background-color: get-color-palette-tone($primary-colors, clarity);
+    }
+
+    .logo {
+        img {
+            position: static;
+        }
+    }
+  
+    &__account-links {
+      display: none;
+  
+      @include respond-to('screen-tablet', null) {
+        position: relative;
+        display: block;
+        width: fit-content;
+        margin-right: 64px;
+        margin-left: auto;
+      }
+  
+      ul {
+        display: flex;
+        justify-content: flex-end;
+        list-style-type: none;
+        margin: 0;
+        gap: 32px;
+      }
+
+      li {
+        display: flex;
+        align-items: center;
+      }
+
+      span {
+        margin-left: 8px;
+      }
+    }
+
+    .account-ctas-content {
+      position: absolute;
+      display: block;
+      background-color: get-color-palette-tone($primary-colors, 'parchment');
+      width: 329px;
+      height: 0;
+      transition: all .5s ease;
+      opacity: 0;
+
+
+      &.animation {
+        height: 140px;
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+  
+  
+    &__main {
+      display: flex;
+      padding: 20px 16px;
+      align-items: center;
+      border-bottom: 1px solid rgba(get-color-palette-tone($natural-colors, 400), 0.12);
+  
+      @include respond-to('screen-tablet', null) {
+        padding: 24px 64px;
+      }
+
+      .globalheader__nav {
+        display: none;
+      }
+  
+      &__content {
+        margin-right: 32px;
+  
+        @include respond-to('screen-tablet', null) {
+
+        }
+  
+      &__links {
+        display: flex;
+        list-style-type: none;
+        gap: 32px;
+      }
+      }
+    }
+
+  
+    .link-contact {
+      margin: 0 32px 0 auto;
+      color: get-color-palette-tone($primary-colors, onyx);
+      text-decoration: none;
+    }
+  
+    &__back {
+      border: 1px solid rgba(get-color-palette-tone($natural-colors, 400), 0.12);
+      margin: 0 16px;
+      padding: 24px 12px;
+      font-size: 16px;
+    }
+  
+    &__menu-button {
+      margin-right: 14px;
+      cursor: pointer;
+  
+      @include respond-to('screen-tablet', null) {
+        display: none;
+      }
+    }
+
+    &__search-section {
+        .cmp-search__icon {
+            color: get-color-palette-tone($secondary-blue-colors, 500);
+        }
+
+        .cmp-search__input {
+            border: none;
+            border-bottom: 1px solid get-color-palette-tone($primary-colors, 'sapphire');
+        }
+    }
+  
+    &__search-button {
+      margin-left: auto;
+
+        button {
+            background: none;
+            border: none;
+        }
+    }
+  
+    &__search__suggestions{
+      margin: 24px 12px;
+
+      &-title {
+        color: get-color-palette-tone($primary-colors, 'sapphire');
+      }
+    }
+  
+    &__menu-button, .cmp-search {
+      background: none;
+      border: none;
+      color: get-color-palette-tone($primary-colors, onyx);
+      font-size: 24px;
+
+      &:hover, &:focus {
+        background: none;
+        outline: none;
+      }
+    }
+  
+    &__content {
+      display: flex;
+      border: 1px solid rgba(get-color-palette-tone($natural-colors, 400), 0.12);
+      border-top: none;
+      border-bottom: none;
+      margin: 0 16px;
+      flex-wrap: wrap;
+      transition: all .5s ease;
+      transform: translateY(-1000px);
+      opacity: 0;
+
+      @include respond-to('screen-tablet', null) {
+        margin: 0 64px;
+        flex-wrap: nowrap;
+      }
+
+      &.animation {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+
+    &__option {
+        color: get-color-palette-tone($primary-colors, onyx);
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        margin-bottom: 48px;
+
+        @include respond-to('screen-tablet', null) {
+          margin-bottom: 0;
+        }
+
+        span {
+            margin-left: 8px;
+        }
+    }
+
+    &__image-container {
+      img {
+        position: static;
+      }
+    }
+  
+    &__nav {
+      width: 100%;
+  
+      @include respond-to('screen-tablet', null) {
+        display: flex;
+      }
+  
+      &-section {
+        list-style-type: none;
+        padding: 0 12px;
+        width: 100%;
+  
+        @include respond-to('screen-tablet', null) {
+          border: 1px solid rgba(get-color-palette-tone($natural-colors, 400), 0.12);
+          border-bottom: none;
+          border-top: none;
+          padding: 40px 32px 48px;
+          margin: 0;
+        }
+  
+        &__title {
+          margin-bottom: 32px;
+        }
+  
+        &__title a{
+          color: #00539A; // TODO: check color saphire congruency with variables and styles
+          text-decoration: none;
+          font-size: 30px; // TODO: use font size mixin
+        }
+      }
+
+      &__link {
+          display: block;
+          color: get-color-palette-tone($primary-colors, onyx);
+          text-decoration: none;
+          margin-bottom: 48px;
+      }
+  
+      &-section:first-of-type {
+        border-bottom: 1px solid rgba(get-color-palette-tone($natural-colors, 400), 0.12);
+  
+        @include respond-to('screen-tablet', null) {
+          border-bottom: none;
+        }
+      }
+    }
+  
+    &__cta {
+      margin: 40px 12px 0;
+      width: 100%;
+      padding: 13px 129px;
+      border-radius: 999px;
+      background-color: #00539A; //Todo ask if add to colors
+      color: get-color-palette-tone($natural-colors, 0);
+      border: none;
+      display: block;
+  
+      @include respond-to('screen-tablet', null) {
+        display: none;
+      }
+    }
+  
+    .hidden {
+      display: none; //todo move to base
+    }
+  
+  }
+  

@@ -1,14 +1,78 @@
+<header class="globalheader">
+    <div class="globalheader__account-links">
+        <ul>
+            <li class="account-cta">Account <span class="icon-chevron-down"></span></li>
+            <li>Local Settings</li>
+        </ul>
+        <ul class="account-ctas-content">
+            <li>Login</li>
+            <li>Sign Up</li>
+        </ul>
+    </div>
+    <div class="globalheader__main">
+        <!-- TODO: use Lazard icons -->
+        <button class="globalheader__menu-button icon-menu">
+        </button>
+        <div class="logo">
+            <sly data-sly-resource="${ 'logo' @ resourceType='lam/components/image'}"></sly>
+        </div>
+        <div class="globalheader__main__content hidden-mobile">
+            <sly data-sly-resource="${ 'nav' @ resourceType='lam/components/l1nav'}"></sly>
+        </div>
+        <a href="#" class="link-contact hidden-mobile">Contact</a>
+        <div class="globalheader__search-button">
+            <button id="search-e99b0597b0" class="cmp-search" role="search" data-cmp-min-length="3" data-cmp-results-size="10">
+                <i class="cmp-search__icon" data-cmp-hook-search="icon"></i>
+            </button>
+        </div>
+    </div>
+    <div class="globalheader__search-section hidden">
+        <sly data-sly-resource="${ 'search' @ resourceType='lam/components/search'}"></sly>
+        <div class="globalheader__search__suggestions">
+            <h4 class="globalheader__search__suggestions-title heading-4">Suggested Search</h4>
+        </div>
+    </div>
+    <div class="globalheader__back icon-chevron-left hidden">
+        Back
+    </div>
+    <div class="globalheader__content">
+        <!--<nav class="globalheader__nav">
+            <ul class="globalheader__nav-section level-0 hidden-desktop">
+                <li class="globalheader__option">Investment Solutions<span class="icon-chevron-right"></span></li>
+                <li class="globalheader__option">Reaserch & Insights<span class="icon-chevron-right"></span></li>
+                <li class="globalheader__option">Sustainable Investment<span class="icon-chevron-right"></span></li>
+                <li class="globalheader__option">About<span class="icon-chevron-right"></span></li>
+            </ul>
+            <ul class="globalheader__nav-section hidden">
+                <li class="globalheader__nav-section__title"><a>Asset Class</a></li>
+                <li><a href="#" class="globalheader__nav__link">Investment Solutions</a></li>
+                <li><a href="#" class="globalheader__nav__link">Reaserch & Insights</a></li>
+                <li><a href="#" class="globalheader__nav__link">Sustainable Investment</a></li>
+                <li><a href="#" class="globalheader__nav__link">About</a></li>
+            </ul>
+            <ul class="globalheader__nav-section">
+                <li><a href="#" class="globalheader__nav__link">Login</a></li>
+                <li><a href="#" class="globalheader__nav__link">Signup</a></li>
+                <li><a href="#" class="globalheader__nav__link">Local Settings</a></li>
+            </ul>
+        </nav> -->
+        <sly data-sly-resource="${ 'nav' @ resourceType='lam/components/l1nav'}"></sly>
+        <div class="globalheader__image-container hidden-mobile">
+            <sly data-sly-resource="${ 'image' @ resourceType='lam/components/image'}"></sly>
+        </div>
+        <button class="globalheader__cta">Connect</button>
+    </div>
+</header>
+
 
 <div class="cmp-navigation">
     <div class="cmp-navigation__header-container">
         <div class="cmp-navigation__logo">
-            <sly data-sly-resource="${ 'image' @ resourceType='lam/components/image'}"></sly>
         </div>
         <div class="cmp-navigation__nav">
-            <sly data-sly-resource="${ 'nav' @ resourceType='lam/components/l1nav'}"></sly>
         </div>
         <div class="cmp-navigation__account">
-            <sly data-sly-resource="${ 'account-cta' @ resourceType='lam/components/button'}"></sly>
+            <sly data-sly-resource="${ 'account-ct' @ resourceType='lam/components/button'}"></sly>
         </div>
         <div class="cmp-navigation__locale-setting">
             <sly data-sly-resource="${ 'locale-cta' @ resourceType='lam/components/button'}"></sly>
@@ -17,7 +81,6 @@
             <sly data-sly-resource="${ 'contact-cta' @ resourceType='lam/components/button'}"></sly>
         </div>
         <div class="cmp-navigation__search">
-            <sly data-sly-resource="${ 'search' @ resourceType='lam/components/search'}"></sly>
         </div>
     </div>
 </div>

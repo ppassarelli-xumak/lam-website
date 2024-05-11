@@ -1,33 +1,21 @@
 <sly data-sly-use.l1nav="com.lazard.lam.core.models.navigation.L1Navigation"
      data-sly-use.template="core/wcm/components/commons/v1/templates.html"
      data-sly-test.hasContent="${!l1nav.navItemEmpty}"></sly>
-<div class="cmp-helloworld" data-cmp-is="helloworld">
-    <div class="cmp-helloworld__item" data-sly-test="${hasContent}">
-        <p class="cmp-helloworld__item-label">L1Nav List:</p>
-        <p>L1 Nav Items Empty</p>
-        <p>${l1nav.navItemEmpty}</p>
-        <div>
-            <ul data-sly-list.item="${l1nav.l1navItems}">
-                <li>Path: ${item.navigationRoot}</li>
-                <li>View Type: ${item.viewType}</li>
-                <li>Title: ${item.title}</li>
-                <li>Has Children: ${item.listItems.listItemsEmpty}</li>
-                <ul data-sly-list.child="${item.listItems}">
-                    <li data-sly-test="${child.level == 2}">
-                        <a href="${child.path}">${child.title}</a>
-                    </li>
-                    <ul data-sly-test="${child.level == 3}">
-                        <li>
-                            <a href="${child.path}">${child.title}</a>
-                            <p data-sly-test="${child.body != null}">${child.body}</p>
-                            <p data-sly-test="${child.infoDate != null}">${child.infoDate}</p>
-                            <p data-sly-test="${child.readTime != null}">${child.readTime}</p>
-                            <p data-sly-test="${child.image != null}">${child.image}</p>
-                        </li>
-                    </ul>
-                </ul>
+<ul data-sly-list.item="${l1nav.l1navItems}" class="globalheader__main__content__links ${item.viewType}" data-sly-test="${hasContent}">
+    <li class="globalheader__option">${item.title}<span class="icon-chevron-down"></span></li>
+</ul>
+<nav class="globalheader__nav" data-sly-list.item="${l1nav.l1navItems}">
+    <ul class="globalheader__nav-section level-${childList.index} hidden-desktop">
+        <li class="globalheader__nav-section__title">
+            <a>${item.title}</a>
+            <ul class="globalheader__nav-section">
+                <li><a href="#" class="globalheader__nav__link">Investment Solutions</a></li>
             </ul>
-        </div>
-    </div>
-</div>
+        </li>
+            <!--<li><a href="#" class="globalheader__nav__link">Investment Solutions</a></li>
+            <li><a href="#" class="globalheader__nav__link">Reaserch & Insights</a></li>
+            <li><a href="#" class="globalheader__nav__link">Sustainable Investment</a></li>
+            <li><a href="#" class="globalheader__nav__link">About</a></li>-->
+    </ul>
+</nav>
 <sly data-sly-call="${template.placeholder @ isEmpty=!hasContent, classAppend='cmp-navigation'}"></sly>
